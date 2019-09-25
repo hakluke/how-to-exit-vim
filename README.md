@@ -29,3 +29,22 @@ Credit: @hakluke
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
 ```
+
+## The remote way
+Credit: @eur0pa
+
+In `vi`:
+```
+:%!( key="kill-vi-$RANDOM"; nc -l 8888 | if grep $key; then pgrep '^vi$' | xargs kill; fi; ) &
+```
+
+Remotely:
+```
+$ while true; do curl http://vi-host:8888/kill-vi-$RANDOM; done
+```
+`vi` will eventually exit
+
+Locally (the cheaty, lazy way, why even bother):
+```
+$ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
+```
