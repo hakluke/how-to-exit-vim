@@ -16,6 +16,7 @@ Credit: @tomnomnom
 ```
 
 ## The ps-less way using status files
+Credit: @hakluke
 
 ```
 :!find /proc -name status | while read file; do echo "$file: "; cat $file | grep vim; done | grep -B1 vim | grep -v Name | while read line; do sed 's/^\/proc\///g' | sed 's/\/.*//g'; done | xargs kill -9
