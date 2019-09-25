@@ -5,7 +5,7 @@ Below are some simple methods for exiting vim.
 Credit: @tomnomnom
 
 ```
-:!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -n
+:!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
 ## The ps-less way
