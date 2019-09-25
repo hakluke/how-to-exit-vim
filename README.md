@@ -21,3 +21,11 @@ Credit: @hakluke
 ```
 :!find /proc -name status | while read file; do echo "$file: "; cat $file | grep vim; done | grep -B1 vim | grep -v Name | while read line; do sed 's/^\/proc\///g' | sed 's/\/.*//g'; done | xargs kill -9
 ```
+
+## The pythonic way
+Credit: @hakluke
+
+```
+:py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
+('utf-8')),signal.SIGTERM)
+```
