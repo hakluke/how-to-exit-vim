@@ -8,6 +8,13 @@ Credit: @tomnomnom
 :!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
+## The simpler way
+Credit: @gauravmanchanda
+
+```
+:!pkill -9 vim
+```
+
 ## The ps-less way
 Credit: @tomnomnom
 
