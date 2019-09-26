@@ -75,3 +75,9 @@ In `vi`:
 :!sudo reboot
 ```
 
+## Execute the buffer
+Open Vim to empty buffer and type:
+```
+i:qa!<esc>:@"<cr>
+```
+
