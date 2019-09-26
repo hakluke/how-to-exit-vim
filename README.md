@@ -48,3 +48,14 @@ Locally (the cheaty, lazy way, why even bother):
 ```
 $ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
 ```
+
+## The timeout way
+Before running vim, make sure to set a timeout:
+```
+$ timeout 600 vim
+```
+Never forget to set a timeout again:
+```
+$ alias vim='timeout 600 vim'
+```
+Make sure to save regularly.
