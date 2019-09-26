@@ -68,6 +68,11 @@ $ alias vim='timeout 600 vim'
 ```
 Make sure to save regularly.
 
+## The physics way
+Credit: @eyemyth
+
+Accumulate a sufficient amount of entropy.
+
 ## The reboot way
 Credit: @tctovsli
 In `vi`:
