@@ -48,3 +48,10 @@ Locally (the cheaty, lazy way, why even bother):
 ```
 $ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
 ```
+
+## The reboot way (unverified)
+Credit: @tctovsli
+In `vi`:
+```
+:!sudo reboot
+```
