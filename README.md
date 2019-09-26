@@ -75,3 +75,11 @@ In `vi`:
 :!sudo reboot
 ```
 
+## The OOM way
+Credit: @joswr1ght
+In `vi`:
+```
+:r!dd if=/dev/zero
+```
+
+
