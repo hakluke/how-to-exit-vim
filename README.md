@@ -88,6 +88,12 @@ In `vi`:
 :!sudo reboot
 ```
 
+## The using vim against itself way (executing the buffer)
+Open Vim to empty buffer and type:
+```
+i:qa!<esc>:@"<cr>
+```
+
 ## The AppleScript way
 Credit: @dbalatero
 In Mac terminal `vi`:
@@ -98,7 +104,7 @@ Replace "iTerm" with your terminal application of choice:
 :let script="activate application \"iTerm\"\ntell application \"System Events\"\n  keystroke \":\"\n  keystroke \"q\"\n  keystroke \"a\"\n  keystroke \"!\"\n  key code 36\nend tell" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
 
-# The Mac Activity Monitor way
+## The Mac Activity Monitor way
 Credit: @dbalatero
 
 ```
