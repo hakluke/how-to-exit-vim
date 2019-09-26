@@ -48,3 +48,6 @@ Locally (the cheaty, lazy way, why even bother):
 ```
 $ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
 ```
+
+##The Norwegian way:
+Pull out the battery/power cord 
