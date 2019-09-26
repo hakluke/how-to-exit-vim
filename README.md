@@ -52,4 +52,24 @@ $ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
 ## The hardware way
 Credit: @Jorengarenar
 
-_**Pull the plug off**_
+_**Pull the plug out**_
+
+## The timeout way
+Credit: @aarongorka
+Before running vim, make sure to set a timeout:
+```
+$ timeout 600 vim
+```
+Never forget to set a timeout again:
+```
+$ alias vim='timeout 600 vim'
+```
+Make sure to save regularly.
+
+## The reboot way
+Credit: @tctovsli
+In `vi`:
+```
+:!sudo reboot
+```
+
