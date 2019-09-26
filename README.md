@@ -75,3 +75,9 @@ In `vi`:
 :!sudo reboot
 ```
 
+## The solipsist way
+Credit: @avalonv
+
+```
+:terminal<cr>:norm i<cr>
+```
