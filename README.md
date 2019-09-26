@@ -91,7 +91,7 @@ In `vi`:
 ## The using vim against itself way (executing the buffer)
 Open Vim to empty buffer and type:
 ```
-i:qa!<esc>:@"<cr>
+i:qa!<esc>Y:@"<cr>
 ```
 
 ## The AppleScript way
