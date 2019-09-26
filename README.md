@@ -49,6 +49,11 @@ Locally (the cheaty, lazy way, why even bother):
 $ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
 ```
 
+## The hardware way
+Credit: @Jorengarenar
+
+_**Pull the plug out**_
+
 ## The timeout way
 Credit: @aarongorka
 Before running vim, make sure to set a timeout:
@@ -67,3 +72,4 @@ In `vi`:
 ```
 :!sudo reboot
 ```
+
