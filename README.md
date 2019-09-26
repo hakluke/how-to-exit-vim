@@ -55,7 +55,9 @@ Credit: @Jorengarenar
 _**Pull the plug out**_
 
 ## The timeout way
+
 Credit: @aarongorka
+
 Before running vim, make sure to set a timeout:
 ```
 $ timeout 600 vim
