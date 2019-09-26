@@ -68,6 +68,13 @@ $ alias vim='timeout 600 vim'
 ```
 Make sure to save regularly.
 
+### Russian Roulette mode
+
+When you want to spice things up a bit:
+```
+$ timeout $RANDOM vim
+```
+
 ## The reboot way
 Credit: @tctovsli
 In `vi`:
