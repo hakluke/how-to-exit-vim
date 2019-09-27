@@ -143,6 +143,8 @@ Credit: @david50407
 ## The Yolo Way
 Credit: @ryanc
 
+Don't run this.
+
 ```
 :!echo b | sudo tee -a /proc/sysrq-trigger
 ```
