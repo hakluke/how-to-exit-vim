@@ -132,3 +132,10 @@ Credit: @dbalatero
 ```
 :let command='emacs --batch --eval=''(shell-command "kill -9 ' . getpid() . '")'' --kill' | execute "!" . command
 ```
+
+## The Vim way
+Credit: @david50407
+
+```
+:let command='vim ''+\\!kill -9 ' . getpid() . ''' +qall -es' | execute "!" . command
+```
