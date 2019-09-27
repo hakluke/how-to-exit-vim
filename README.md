@@ -166,6 +166,15 @@ Credit: @david50407
 :let command='vim ''+\\!kill -9 ' . getpid() . ''' +qall -es' | execute "!" . command
 ```
 
+## The Client-Server way
+Credit: @tartansandal
+
+If `+clientserver` is enabled -- typically the case for the GUI -- you can simply
+
+```
+:!gvim --remote-send ':q\!<CR>'
+```
+
 ## The Yolo Way
 Credit: @ryanc
 
