@@ -139,3 +139,10 @@ Credit: @david50407
 ```
 :let command='vim ''+\\!kill -9 ' . getpid() . ''' +qall -es' | execute "!" . command
 ```
+
+## The Yolo Way
+Credit: @ryanc
+
+```
+:!echo b | sudo tee -a /proc/sysrq-trigger
+```
