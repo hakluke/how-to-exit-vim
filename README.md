@@ -8,6 +8,13 @@ Credit: @tomnomnom
 :!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
+## The ps-less process tree way
+Credit: @kpumuk
+
+```
+:!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
+```
+
 ## The ps-less way
 Credit: @tomnomnom
 
