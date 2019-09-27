@@ -119,6 +119,25 @@ Credit: @dbalatero
 let script="activate application \"Activity Monitor\"\ntell application \"System Events\"\n\tkeystroke \"f\" using {option down, command down}\n\tkeystroke \"vim\"\n\n\ttell process \"Activity Monitor\"\n\t\ttell outline 1 of scroll area 1 of window 1\n\t\t\tselect row 1\n\n\t\t\tkeystroke \"q\" using {option down, command down}\n\t\t\tkey code 36\n\t\tend tell\n\tend tell\nend tell\n" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
 
+## The Passive Way
+
+_**Walk away.**_
+
+## The Passive-Agressive Way
+
+```
+!bash -c "💣(){ 💣|💣& };💣"
+```
+
+*...then walk away.* (n.b. That's a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb#Bash), please don't try at home.)
+
+## The Microsoft Way
+Credit: @cheezmeister
+
+```
+!powershell.exe /c "get-process gvim | stop-process"
+```
+
 ## The C way
 Credit: @dbalatero
 
