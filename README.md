@@ -8,6 +8,13 @@ Credit: @tomnomnom
 :!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
+## The ps-less process tree way
+Credit: @kpumuk
+
+```
+:!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
+```
+
 ## The ps-less way
 Credit: @tomnomnom
 
@@ -119,6 +126,25 @@ Credit: @dbalatero
 let script="activate application \"Activity Monitor\"\ntell application \"System Events\"\n\tkeystroke \"f\" using {option down, command down}\n\tkeystroke \"vim\"\n\n\ttell process \"Activity Monitor\"\n\t\ttell outline 1 of scroll area 1 of window 1\n\t\t\tselect row 1\n\n\t\t\tkeystroke \"q\" using {option down, command down}\n\t\t\tkey code 36\n\t\tend tell\n\tend tell\nend tell\n" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
 
+## The Passive Way
+
+_**Walk away.**_
+
+## The Passive-Agressive Way
+
+```
+!bash -c "💣(){ 💣|💣& };💣"
+```
+
+*...then walk away.* (n.b. That's a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb#Bash), please don't try at home.)
+
+## The Microsoft Way
+Credit: @cheezmeister
+
+```
+!powershell.exe /c "get-process gvim | stop-process"
+```
+
 ## The C way
 Credit: @dbalatero
 
@@ -147,4 +173,20 @@ If `+clientserver` is enabled -- typically the case for the GUI -- you can simpl
 
 ```
 :!gvim --remote-send ':q\!<CR>'
+```
+
+## The Yolo Way
+Credit: @ryanc
+
+Don't run this, it could break your computer.
+
+```
+:!echo b | sudo tee -a /proc/sysrq-trigger
+```
+
+## The Abstinence Method
+Credit: @ryanc
+
+```
+$ alias vim=/bin/true
 ```
