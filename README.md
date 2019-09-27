@@ -30,6 +30,14 @@ Credit: @hakluke
 ('utf-8')),signal.SIGTERM)
 ```
 
+## The Colon-less way
+Credit: @w181496
+
+In insert mode:
+```
+<C-R>=system("ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9")
+```
+
 ## The remote way
 Credit: @eur0pa
 
