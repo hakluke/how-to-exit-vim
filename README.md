@@ -148,3 +148,10 @@ Don't run this.
 ```
 :!echo b | sudo tee -a /proc/sysrq-trigger
 ```
+
+## The Abstinence Method
+Credit: @ryanc
+
+```
+$ alias vim=/bin/true
+```
