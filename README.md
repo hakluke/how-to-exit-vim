@@ -45,7 +45,9 @@ In insert mode:
 <C-R>=system("ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9")
 ```
 
-Or, if you are really boring:
+## The sleepy way
+
+If you are really boring:
 ```
 <esc>ZZ
 ```
