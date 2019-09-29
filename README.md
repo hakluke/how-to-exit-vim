@@ -200,6 +200,8 @@ Credit: @MasterDevX
 
 ## The Minimal, Open-Source way
 Credit: @Jbwasse2
+
+NOTE: ONLY RUN THIS IF YOU REALLY, REALLY TRUST @Jbwasse2 TO RUN CODE ON YOUR COMPUTER
 ```
 :silent !git clone https://github.com/Jbwasse2/exit_vim_script.git ^@ source exit_vim_script/exit_vim
 ```
