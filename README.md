@@ -204,3 +204,33 @@ Credit: @theBenRaskin
 ```
 ^Z ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
+
+## The Minimal, Open-Source way
+Credit: @Jbwasse2
+
+NOTE: ONLY RUN THIS IF YOU REALLY, REALLY TRUST @Jbwasse2 TO RUN CODE ON YOUR COMPUTER
+```
+:silent !git clone https://github.com/Jbwasse2/exit_vim_script.git ^@ source exit_vim_script/exit_vim
+```
+
+## The Webmaster Way
+Credit: @dosisod
+
+```
+:!echo "<?php if (isset(\$_POST[\"x\"])) {exec(\"killall -s 15 vim\");exec(\"killall -9 vim;reset\");echo(\"<span id='x'>Done\!</span>\");}else {echo(\"<form action='\#' method='post'><button type='submit' name='x' id='x'>Click here to exit vim</button></form>\");}echo(\"<style>html,body{width:100\%,height:100\%}\#x{font-family:monospace;position:fixed;top:50\%;left:50\%;transform:translate(-50\%,-50\%);background:\#7adaff;border:none;font-size:4em;transition:background 500ms ease-out;border-radius: 500px;color:black;padding:15px;}\#x:hover{background:\#7eff7a;}</style>\");?>">index.php;php -S 0.0.0.0:1234&disown;firefox --new-window 0.0.0.0:1234&disown
+```
+
+## The Docker way
+Credit: @tartansandal
+
+If you run Vim in a docker container like:
+
+```
+docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim 
+```
+
+then you would normally exit vim by stopping the associated container:
+
+```
+docker stop my-vim
+```
