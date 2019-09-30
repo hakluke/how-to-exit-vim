@@ -8,13 +8,6 @@ Credit: @tomnomnom
 :!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
-## The ps-less process tree way
-Credit: @kpumuk
-
-```
-:!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
-```
-
 ## The ps-less way
 Credit: @tomnomnom
 
@@ -27,6 +20,13 @@ Credit: @hakluke
 
 ```
 :!find /proc -name status | while read file; do echo "$file: "; cat $file | grep vim; done | grep -B1 vim | grep -v Name | while read line; do sed 's/^\/proc\///g' | sed 's/\/.*//g'; done | xargs kill -9
+```
+
+## The ps-less process tree way
+Credit: @kpumuk
+
+```
+:!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
 
 ## The pythonic way
