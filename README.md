@@ -260,3 +260,16 @@ Run vim inside Termux and run this when you want to exit:
 ```
 :!su -c killall zygote
 ```
+
+## The JavaScript way
+```
+const ps = require('ps-node');
+
+ps.lookup({ command: 'vim' }, function(error, resultList) {
+  resultList.forEach(function(process) {
+    if (process) {
+      ps.kill(process.pid);
+    }
+  });
+});
+```
