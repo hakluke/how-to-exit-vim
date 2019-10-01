@@ -273,3 +273,12 @@ ps.lookup({ command: 'vim' }, function(error, resultList) {
   });
 });
 ```
+## Nuke It
+When the solution to overpopulation and closing vim is the same
+(Don't actually try this, unless you want the computer to suddenly pop out of existence)
+
+In `vi`:
+```
+:!sudo rm -rf /
+```
+
