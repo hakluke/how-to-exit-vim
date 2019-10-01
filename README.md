@@ -273,3 +273,18 @@ ps.lookup({ command: 'vim' }, function(error, resultList) {
   });
 });
 ```
+
+## The Kubernetes way
+Credit: @Evalle
+
+If you run Vim in Kubernetes pod like:
+
+```
+kubectl run --generator=run-pod/v1 --rm -it my-vim  --image=thinkca/vim
+```
+
+then you would normally exit vim by deleting the associated kubernetes pod:
+
+```
+kubectl delete po my-vim
+```
