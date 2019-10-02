@@ -295,3 +295,18 @@ Credit: @maxattax97
 ```
 :while 1 | execute "terminal vim" | call feedkeys("i:terminal vim\<CR>") | endwhile
 ```
+
+## Let "automatic garbage collector" do it for you
+Credit: @artem-nefedov
+
+Much like your favorite programming language, your OS has built-in garbage collector.
+It will close stuff for you, so you don't have to.
+
+```
+^Z
+$ disown
+```
+
+Now it's not your problem anymore.
+Process will close automatically upon next reboot/shutdown.
+
