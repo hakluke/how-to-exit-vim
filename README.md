@@ -228,7 +228,7 @@ Credit: @tartansandal
 If you run Vim in a docker container like:
 
 ```
-docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim 
+docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim
 ```
 
 then you would normally exit vim by stopping the associated container:
@@ -287,4 +287,11 @@ then you would normally exit Vim by deleting the associated Kubernetes pod:
 
 ```
 kubectl delete po my-vim
+```
+
+## The Vim inside of Vim inside of Vim inside of Vim... inside of Vim way
+Credit: @maxattax97
+
+```
+:while 1 | execute "terminal vim" | call feedkeys("i:terminal vim\<CR>") | endwhile
 ```
