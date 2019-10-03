@@ -310,3 +310,23 @@ $ disown
 Now it's not your problem anymore.
 Process will close automatically upon next reboot/shutdown.
 
+## The Product Manager way
+Credit: @mqchen
+
+1. Create new Jira issue.
+1. Set priority to A - Critical.
+1. Assign to random team member.
+
+## The Experienced Product Manager way
+Credit: @mqchen
+
+1. Create new Jira issue.
+1. Set priority to A - Critical, Epic link and Components.
+1. Write Given-When-Then acceptance criteras.
+1. Schedule estimation workshop meeting.
+1. Conduct estimation meeting with Planning Poker cards.
+1. Prioritize in next sprint.
+1. Assign to random team member.
+1. Conduct acceptance test.
+1. Review burn down chart together with the team.
+1. Schedule retrospective.
