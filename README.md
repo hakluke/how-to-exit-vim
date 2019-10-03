@@ -330,3 +330,7 @@ Credit: @mqchen
 8. Conduct acceptance test.
 9. Review burn down chart together with the team.
 10. Schedule retrospective.
+
+## The New PC way
+Credit: @ymatos
+Go to the BestBuy and buy a new PC.
