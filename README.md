@@ -97,6 +97,10 @@ Credit: @eyemyth
 
 Accumulate a sufficient amount of entropy.
 
+## The philosophical way
+
+If a vim starts up in a forest, does it make a sound?
+
 
 ## The reboot way
 Credit: @tctovsli
