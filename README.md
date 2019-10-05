@@ -330,3 +330,14 @@ Credit: @mqchen
 8. Conduct acceptance test.
 9. Review burn down chart together with the team.
 10. Schedule retrospective.
+
+## The tmux way
+Credit: @vcoutasso
+
+Inside a tmux session:
+
+```
+<C-B> :kill-session
+```
+
+Note that ```<C-B>``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
