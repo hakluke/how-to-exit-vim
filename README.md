@@ -337,7 +337,7 @@ Credit: @vcoutasso
 Inside a tmux session:
 
 ```
-<C-B> :kill-session
+Ctrl+B :kill-session
 ```
 
-Note that ```<C-B>``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
+Note that ```Ctrl+B``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
