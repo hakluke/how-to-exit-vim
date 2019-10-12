@@ -346,3 +346,12 @@ Ctrl+B x y
 ```
 
 Note that ```Ctrl+B``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
+
+## The southern way
+Credit: @ginsburgnm
+
+Prereq: vim got you madder than a cat gettin baptized
+1. Grab your Mossberg 590
+2. It's already loaded, so you can skip this step
+3. blow that buzzard to sam hill
+4. pour yourself a mint julep
