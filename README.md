@@ -353,3 +353,15 @@ Credit: @johnoct
 1. Don't even try to exit on your own
 2. Ask Senior right away
 
+## The debugger way
+Credit: @serjepatoff
+
+### Linux
+$ gdb `which vim`
+(gdb) r <Enter>
+Ctrl-Z q <Enter> y <Enter>
+  
+### Mac
+$ lldb `which vim`
+(lldb) r <Enter>
+Ctrl-C q <Enter> <Enter>
