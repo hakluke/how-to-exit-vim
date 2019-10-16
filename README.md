@@ -356,12 +356,16 @@ Credit: @johnoct
 ## The debugger way
 Credit: @serjepatoff
 
-### Linux
+Linux
+```
 $ gdb `which vim`
 (gdb) r <Enter>
 Ctrl-Z q <Enter> y <Enter>
-  
-### Mac
+```
+
+Mac
+```
 $ lldb `which vim`
 (lldb) r <Enter>
 Ctrl-C q <Enter> <Enter>
+```
