@@ -353,3 +353,8 @@ Credit: @johnoct
 1. Don't even try to exit on your own
 2. Ask Senior right away
 
+## The Rich Man's way
+Credit: @sdfnz
+
+1. Buy Bram Moolenaar a round-trip plane ticket to where you live.
+2. Have him exit Vim for you. Bribe him if needed.
