@@ -378,3 +378,12 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The consonant cluster way
+Credit: @wchargin
+
+To exit, saving all files, simply incant (in normal mode):
+
+```vim
+qqqqqZZ@qq@q
+```
