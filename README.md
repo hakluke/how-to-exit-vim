@@ -39,6 +39,13 @@ Credit: @hakluke
 ('utf-8')),signal.SIGTERM)
 ```
 
+## The rubist using shell way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'system(killall -9 vim)'
+```
+
 ## The Colon-less way
 Credit: @w181496
 
