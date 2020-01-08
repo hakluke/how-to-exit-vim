@@ -378,3 +378,7 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The Jeffrey Way
+
+![Jeffrey Way](assets/jeffrey.jpeg)
