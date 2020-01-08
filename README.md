@@ -378,3 +378,14 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The SEO Manager way
+Credit: @mikulabc
+
+```
+how to exit vim
+vim exit help
+vim exit guide
+exit him
+how exit vim
+```
