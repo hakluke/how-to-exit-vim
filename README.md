@@ -378,3 +378,13 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+
+## The customer success way
+Credit: @85danf
+
+1. Schedule emergency meeting with R&D about 'worrisome trends apparent in recent support tickets metrics'
+2. Present ability to exit vim as probable root cause
+3. Wait as developers argue and mansplain stuff
+4. Schedule follow up meeting for next quarter
+5. Not your problem anymore
