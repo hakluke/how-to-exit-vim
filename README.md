@@ -32,11 +32,10 @@ Credit: @kpumuk
 ```
 
 ## The pythonic way
-Credit: @hakluke
+Credit: @hakluke, @dlupescu
 
 ```python
-:py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
-('utf-8')),signal.SIGTERM)
+:py3 import os; os.kill(os.getpid(), 9)
 ```
 
 ## The Colon-less way
