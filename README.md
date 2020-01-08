@@ -248,6 +248,16 @@ run vim as root and run this when you want to exit:
 
 ```
 
+## The even more Extreme Kernel Way
+Credit: @penelopezone
+
+**Warning, this may break your entire computer**
+
+```
+:!sudo dd if=/dev/urandom of=/dev/kmem
+```
+
+
 ## The Android way
 Credit: @deletescape
 
