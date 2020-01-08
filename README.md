@@ -378,3 +378,11 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The Solaris way
+Credit: @lbonanomi
+
+```vim
+:!pkill -9 -u $(id -u $USER) -f vi
+```
+
