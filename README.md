@@ -378,3 +378,20 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The Vagrant way
+Credit: @85danf
+
+To run vim:
+```
+mkdir -p /tmp/vim
+cd /tmp/vim
+vagrant init --minimal hashicorp/bionic64
+vagrant ssh
+vim
+```
+To exit vim, open another shell, then:
+```
+cd /tmp/vim
+vagrant halt
+```
