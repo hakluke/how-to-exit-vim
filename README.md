@@ -7,7 +7,7 @@ For real vim (and hacking) tips, follow [hakluke](https://twitter.com/hakluke) a
 Credit: @tomnomnom
 
 ```vim
-:!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
+:!pgrep vim | xargs kill -9
 ```
 
 ## The ps-less way
