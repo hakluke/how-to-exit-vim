@@ -378,3 +378,8 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The VMware & VirtualBox way
+Credit: @davalapar
+
+Shut down (or reboot) the virtual machine.
