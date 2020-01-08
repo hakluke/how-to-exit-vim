@@ -39,11 +39,18 @@ Credit: @hakluke
 ('utf-8')),signal.SIGTERM)
 ```
 
-## The rubist using shell way
+## The lazy rubist using shell way
 Credit: @rynaro
 
 ```bash
 $ ruby -e 'system("killall -9 vim")'
+```
+
+## The rubist way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'pid = `pidof vim`; Process.kill(9, pid.to_i)'
 ```
 
 ## The Colon-less way
