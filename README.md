@@ -202,10 +202,10 @@ Credit: @MasterDevX
 ```
 
 ## The suspend way
-Credit: @theBenRaskin
+Credit: @IPvFletch
 
 ```bash
-^Z ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
+^Z kill -9 %+
 ```
 
 ## The Minimal, Open-Source way
