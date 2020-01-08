@@ -98,7 +98,7 @@ Credit: @cfrost
 
 When you want to spice things up a bit more:
 ```
-:!ps axuw | sort -R | awk '{print $2}' | xargs kill -9
+:!ps axuw | sort -R | head -1 | awk '{print $2}' | xargs kill -9
 ```
 
 ## The physics way
