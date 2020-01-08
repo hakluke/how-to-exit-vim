@@ -96,7 +96,7 @@ $ timeout $RANDOM vim
 Credit: @aliva
  
 ```
-$ ps axuw | awk '{print $2}' | shuf | head -n 1 | sudo kill -9
+$ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
 ```
 
 ## The physics way
