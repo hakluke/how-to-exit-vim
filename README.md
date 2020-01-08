@@ -378,3 +378,8 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The Entry Level Software Engineer way
+1. Try CTRL+C
+2. Ask a senior engineer
+3. Have senior engineer direct you to [how-to-exit-vim](https://github.com/hakluke/how-to-exit-vim)
