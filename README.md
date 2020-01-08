@@ -378,3 +378,8 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The Matrix way
+Credit: @85danf
+
+"There is no vim"
