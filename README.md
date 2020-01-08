@@ -216,6 +216,16 @@ NOTE: ONLY RUN THIS IF YOU REALLY, REALLY TRUST @Jbwasse2 TO RUN CODE ON YOUR CO
 :silent !git clone https://github.com/Jbwasse2/exit_vim_script.git ^@ source exit_vim_script/exit_vim
 ```
 
+## The Acceptance Way
+Credit: @praveenscience
+
+Just stay in Vim 😊 🤘🏻
+
+## Freshman CS Student Way
+Credit: @praveenscience
+
+Panic, Lock the computer in the computer room, run.
+
 ## The Webmaster Way
 Credit: @dosisod
 
