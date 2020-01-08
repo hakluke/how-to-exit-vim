@@ -7,7 +7,7 @@ For real vim (and hacking) tips, follow [hakluke](https://twitter.com/hakluke) a
 Credit: @tomnomnom
 
 ```vim
-:!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
+:!ps axuw | grep vi[m] | awk '{print $2}' | xargs kill -9
 ```
 
 ## The ps-less way
@@ -44,7 +44,7 @@ Credit: @w181496
 
 In insert mode:
 ```
-<C-R>=system("ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9")
+<C-R>=system("ps axuw | grep vi[m] | awk '{print $2}' | xargs kill -9")
 ```
 
 ## The remote way
@@ -205,7 +205,7 @@ Credit: @MasterDevX
 Credit: @theBenRaskin
 
 ```bash
-^Z ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
+^Z ps axuw | grep vi[m] | awk '{print $2}' | xargs kill -9
 ```
 
 ## The Minimal, Open-Source way
