@@ -378,3 +378,20 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The ambushed newbie way
+```
+git commit
+```
+
+???
+```
+^x ^x ^x ^d ^c afawfuhi WHAT IS GOING ON faffae ^x
+```
+
+In Google:
+```
+"what is default text editor for git?" | "How to exit vim"
+```
+
+Click the Github link and copy paste any command at random into your terminal. Voila!
