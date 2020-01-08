@@ -43,7 +43,7 @@ Credit: @hakluke
 Credit: @rynaro
 
 ```bash
-$ ruby -e 'system(killall -9 vim)'
+$ ruby -e 'system("killall -9 vim")'
 ```
 
 ## The Colon-less way
