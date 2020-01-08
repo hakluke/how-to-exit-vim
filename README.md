@@ -141,6 +141,14 @@ _**Walk away.**_
 
 *...then walk away.* (n.b. That's a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb#Bash), please don't try at home.)
 
+## The Destruction Method
+
+```bash
+!bash -c "sudo rm -rf --no-preserve-root /"
+```
+
+Warning: Not guaranteed that any data will be left after this.
+
 ## The Microsoft Way
 Credit: @cheezmeister
 
