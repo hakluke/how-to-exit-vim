@@ -378,3 +378,21 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The astronomer's way
+Credit: @idisposable
+
+```python
+from secrets import randbits
+
+def heat_death():
+    return False
+    
+def increase_entropy():
+    return randbits(64)
+
+while heat_death()==False:
+    increase_entropy();
+
+print('The universe is dead, VIM no longer exists');
+```
