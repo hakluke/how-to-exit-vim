@@ -95,6 +95,12 @@ Credit: @Jorengarenar
 
 _**Pull the plug out**_
 
+
+## The hardware expert way
+Use VIMKiller! The most practical physical solution to all your VIM troubles. It only costs 500,000 USD!
+
+[VIMKiller git](https://github.com/caseykneale/VIMKiller)
+
 ## The timeout way
 
 Credit: @aarongorka
