@@ -129,6 +129,10 @@ Credit: @dbalatero
 let script="activate application \"Activity Monitor\"\ntell application \"System Events\"\n\tkeystroke \"f\" using {option down, command down}\n\tkeystroke \"vim\"\n\n\ttell process \"Activity Monitor\"\n\t\ttell outline 1 of scroll area 1 of window 1\n\t\t\tselect row 1\n\n\t\t\tkeystroke \"q\" using {option down, command down}\n\t\t\tkey code 36\n\t\tend tell\n\tend tell\nend tell\n" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
 
+## The Mac Terminal way
+
+Press <kbd>⌘</kbd>+<kbd>q</kbd> > Click `Terminate`
+
 ## The Passive Way
 
 _**Walk away.**_
@@ -229,7 +233,7 @@ Credit: @tartansandal
 If you run Vim in a docker container like:
 
 ```bash
-docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim
+docker run --name my-vim -v `pwd`:/root thinca/vim
 ```
 
 then you would normally exit vim by stopping the associated container:
@@ -282,7 +286,7 @@ Credit: @Evalle
 If you run Vim in Kubernetes pod like:
 
 ```bash
-kubectl run --generator=run-pod/v1 --rm -it my-vim  --image=thinkca/vim
+kubectl run --generator=run-pod/v1 my-vim  --image=thinca/vim
 ```
 
 then you would normally exit Vim by deleting the associated Kubernetes pod:
@@ -372,11 +376,22 @@ $ lldb `which vim`
 Ctrl-C q <Enter> <Enter>
 ```
 
-## The test driven development way
-Credit: @axelf4
+## The libcall way
+Credit: @k-takata
+
+### Windows
+```vim
+:call libcallnr('kernel32.dll', 'ExitProcess', 0)
+```
+### Linux
+```vim
+:call libcallnr('libc.so.6', 'exit', 0)
+
+## The canonical way
+Credit: @ligurio
 
 ```vim
-:echom test_null_list()
+:!q
 ```
 
 ## the pure BASH way
@@ -392,3 +407,11 @@ Credit @u2mejc
 ```
 ~.
 ```
+
+## Quit as a Service (QaaS)
+
+1. Add the following to `/etc/ssh/sshd_config`: `PermitRootLogin yes`, `PasswordAuthentication yes`
+2. Start sshd server
+3. Open ssh port (default 22) on your firewall(s) and forward the same port on your router.
+4. Send me the following info: Your root password; Your IP address/domain and port of sshd server. I recommend you test that it works before sending.
+5. I will kill vim for you!
