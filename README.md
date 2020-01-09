@@ -458,6 +458,11 @@ cd /tmp/vim
 vagrant halt
 ```
 
+## The Matrix way
+Credit: @85danf
+
+"There is no vim"
+
 ## The SEO Manager way
 Credit: @mikulabc
 
