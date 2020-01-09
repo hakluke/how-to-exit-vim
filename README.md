@@ -605,3 +605,8 @@ print('The universe is dead, VIM no longer exists');
 1. Try CTRL+C
 2. Ask a senior engineer
 3. Have senior engineer direct you to [how-to-exit-vim](https://github.com/hakluke/how-to-exit-vim)
+
+## Mr. Trump way
+Credit @PresidentBush
+
+Start a war somewhere in the Middle East
