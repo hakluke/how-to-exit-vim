@@ -379,7 +379,7 @@ Credit: @axelf4
 :echom test_null_list()
 ```
 
-## The user way
+## The billionare way
 Credit: @samuraii
 
-Reboot the device.
+$ Buy new computer.
