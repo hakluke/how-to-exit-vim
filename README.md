@@ -129,6 +129,10 @@ Credit: @dbalatero
 let script="activate application \"Activity Monitor\"\ntell application \"System Events\"\n\tkeystroke \"f\" using {option down, command down}\n\tkeystroke \"vim\"\n\n\ttell process \"Activity Monitor\"\n\t\ttell outline 1 of scroll area 1 of window 1\n\t\t\tselect row 1\n\n\t\t\tkeystroke \"q\" using {option down, command down}\n\t\t\tkey code 36\n\t\tend tell\n\tend tell\nend tell\n" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
 
+## The Mac Terminal way
+
+Press <kbd>⌘</kbd>+<kbd>q</kbd> > Click `Terminate`
+
 ## The Passive Way
 
 _**Walk away.**_
@@ -390,4 +394,10 @@ Windows
 Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
+
+## The canonical way
+Credit: @ligurio
+
+```vim
+:!q
 ```
