@@ -221,11 +221,6 @@ Credit: @praveenscience
 
 Just stay in Vim 😊 🤘🏻
 
-## Freshman CS Student Way
-Credit: @praveenscience
-
-Panic, Lock the computer in the computer room, run.
-
 ## The Webmaster Way
 Credit: @dosisod
 
