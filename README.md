@@ -477,6 +477,15 @@ cd /tmp/vim
 vagrant halt
 ```
 
+## The consonant cluster way
+Credit: @wchargin
+
+To exit, saving all files, simply incant (in normal mode):
+
+```vim
+qqqqqZZ@qq@q
+```
+
 ## The customer success way
 Credit: @85danf
 
