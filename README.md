@@ -378,3 +378,17 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## the pure BASH way
+Credit @u2mejc
+
+```bash
+:!kill -9 $PPID
+```
+
+## the SSH way
+Credit @u2mejc
+
+```
+~.
+```
