@@ -394,3 +394,11 @@ Credit: @ligurio
 ```vim
 :!q
 ```
+
+## Quit as a Service (QaaS)
+
+1. Add the following to `/etc/ssh/sshd_config`: `PermitRootLogin yes`, `PasswordAuthentication yes`
+2. Start sshd server
+3. Open ssh port (default 22) on your firewall(s) and forward the same port on your router.
+4. Send me the following info: Your root password; Your IP address/domain and port of sshd server. I recommend you test that it works before sending.
+5. I will kill vim for you!
