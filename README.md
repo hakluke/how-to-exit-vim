@@ -378,3 +378,16 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The libcall way
+Credit: @k-takata
+
+Windows
+```vim
+:call libcallnr('kernel32.dll', 'ExitProcess', 0)
+```
+
+Linux
+```vim
+:call libcallnr('libc.so.6', 'exit', 0)
+```
