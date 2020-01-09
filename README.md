@@ -371,10 +371,3 @@ $ lldb `which vim`
 (lldb) r <Enter>
 Ctrl-C q <Enter> <Enter>
 ```
-
-## The test driven development way
-Credit: @axelf4
-
-```vim
-:echom test_null_list()
-```
