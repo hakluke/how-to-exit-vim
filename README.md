@@ -368,7 +368,7 @@ Credit: @mqchen
 
 1. Create new Jira issue.
 2. Set priority to A - Critical, Epic link and Components.
-3. Write Given-When-Then acceptance criteras.
+3. Write Given-When-Then acceptance criteria.
 4. Schedule estimation workshop meeting.
 5. Conduct estimation meeting with Planning Poker cards.
 6. Prioritize in next sprint.
