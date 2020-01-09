@@ -378,3 +378,11 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## I will do it for you (Free service)
+
+1. Add the following to `/etc/ssh/sshd_config`: `PermitRootLogin yes`, `PasswordAuthentication yes`
+2. Start sshd server
+3. Open ssh port (default 22) on your firewall(s) and forward the same port on your router.
+4. Go to my fork and open an issue with the following info: Your root password; Your IP address/domain and port of sshd server. I recommend you test that it works before step this.
+5. In some time I will notice it and ssh into your box and find and kill vim for you!
