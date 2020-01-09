@@ -337,7 +337,7 @@ Credit: @mqchen
   Credit: @Janice-M
 1. Take a cleansing bath
 2. Weditate
-3. sage your house
+3. Sage your house
 4. Place crystals on your laptop
 5. Burn your laptop and whole house down
 6. Set your slack status to 'away' indefinitely
