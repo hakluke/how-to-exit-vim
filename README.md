@@ -38,6 +38,27 @@ Credit: @hakluke
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
 ```
+## The Rustacean's way
+Credit: @wodny
+
+1. Reimplement vim in Rust.
+2. Call the project `rim`.
+3. Run `rim`.
+4. Exit `rim` using a borrowed command, ie. `:q!`.
+
+## The lazy rubist using shell way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'system("killall -9 vim")'
+```
+
+## The rubist way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'pid = `pidof vim`; Process.kill(9, pid.to_i)'
+```
 
 ## The Colon-less way
 Credit: @w181496
@@ -128,6 +149,10 @@ Credit: @dbalatero
 ```applescript
 let script="activate application \"Activity Monitor\"\ntell application \"System Events\"\n\tkeystroke \"f\" using {option down, command down}\n\tkeystroke \"vim\"\n\n\ttell process \"Activity Monitor\"\n\t\ttell outline 1 of scroll area 1 of window 1\n\t\t\tselect row 1\n\n\t\t\tkeystroke \"q\" using {option down, command down}\n\t\t\tkey code 36\n\t\tend tell\n\tend tell\nend tell\n" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
+
+## The Mac Terminal way
+
+Press <kbd>⌘</kbd>+<kbd>q</kbd> > Click `Terminate`
 
 ## The Passive Way
 
@@ -229,7 +254,7 @@ Credit: @tartansandal
 If you run Vim in a docker container like:
 
 ```bash
-docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim
+docker run --name my-vim -v `pwd`:/root thinca/vim
 ```
 
 then you would normally exit vim by stopping the associated container:
@@ -282,7 +307,7 @@ Credit: @Evalle
 If you run Vim in Kubernetes pod like:
 
 ```bash
-kubectl run --generator=run-pod/v1 --rm -it my-vim  --image=thinkca/vim
+kubectl run --generator=run-pod/v1 my-vim  --image=thinca/vim
 ```
 
 then you would normally exit Vim by deleting the associated Kubernetes pod:
@@ -333,6 +358,16 @@ Credit: @mqchen
 9. Review burn down chart together with the team.
 10. Schedule retrospective.
 
+## The spiritual way 
+  Credit: @Janice-M
+1. Take a cleansing bath
+2. Weditate
+3. Sage your house
+4. Place crystals on your laptop
+5. Burn your laptop and whole house down
+6. Set your slack status to 'away' indefinitely
+7. Move to the forest
+
 ## The tmux way
 Credit: @vcoutasso
 
@@ -341,7 +376,7 @@ Inside a tmux session:
 ```
 Ctrl+B :kill-session
 ```
-alternatively
+alternativelycd
 
 ```
 Ctrl+B x y
@@ -354,6 +389,12 @@ Credit: @johnoct
 
 1. Don't even try to exit on your own
 2. Ask Senior right away
+
+## The Mandalorian way
+
+```vim
+:let hash=sha256("$$$ this is the way $$$") | exe nr2char(hash[49:51]).hash[-3:-3]."!"
+```
 
 ## The debugger way
 Credit: @serjepatoff
@@ -372,12 +413,47 @@ $ lldb `which vim`
 Ctrl-C q <Enter> <Enter>
 ```
 
-## The test driven development way
-Credit: @axelf4
+## The libcall way
+Credit: @k-takata
+
+### Windows
+```vim
+:call libcallnr('kernel32.dll', 'ExitProcess', 0)
+
+```
+
+### Linux
+```vim
+:call libcallnr('libc.so.6', 'exit', 0)
+
+## The canonical way
+Credit: @ligurio
 
 ```vim
-:echom test_null_list()
+:!q
 ```
+
+## the pure BASH way
+Credit @u2mejc
+
+```bash
+:!kill -9 $PPID
+```
+
+## the SSH way
+Credit @u2mejc
+
+```
+~.
+```
+
+## Quit as a Service (QaaS)
+
+1. Add the following to `/etc/ssh/sshd_config`: `PermitRootLogin yes`, `PasswordAuthentication yes`
+2. Start sshd server
+3. Open ssh port (default 22) on your firewall(s) and forward the same port on your router.
+4. Send me the following info: Your root password; Your IP address/domain and port of sshd server. I recommend you test that it works before sending.
+5. I will kill vim for you!
 
 ## The astronomer's way
 Credit: @idisposable
