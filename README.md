@@ -235,6 +235,11 @@ Credit: @ryanc
 $ alias vim=/bin/true
 ```
 
+## The normal way
+```vim
+:$:normal ZQ
+```
+
 ## The Passive-Aggressive Abstinence Method
 Credit: @donkoch
 
