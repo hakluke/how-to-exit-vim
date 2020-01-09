@@ -489,3 +489,9 @@ while heat_death()==False:
 
 print('The universe is dead, VIM no longer exists');
 ```
+
+## The hardware technician's way
+Credit: @KlaymenDK
+
+1. Flip the power switch.
+2. Realize you need another cup of coffee.
