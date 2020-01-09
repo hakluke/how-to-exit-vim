@@ -359,6 +359,12 @@ Credit: @johnoct
 1. Don't even try to exit on your own
 2. Ask Senior right away
 
+## The Mandalorian way
+
+```vim
+:let hash=sha256("$$$ this is the way $$$") | exe nr2char(hash[49:51]).hash[-3:-3]."!"
+```
+
 ## The debugger way
 Credit: @serjepatoff
 
