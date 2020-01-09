@@ -158,7 +158,7 @@ Press <kbd>⌘</kbd>+<kbd>q</kbd> > Click `Terminate`
 
 _**Walk away.**_
 
-## The Passive-Agressive Way
+## The Passive-Aggressive Way
 
 ```bash
 !bash -c "💣(){ 💣|💣& };💣"
@@ -217,6 +217,13 @@ Credit: @ryanc
 
 ```bash
 $ alias vim=/bin/true
+```
+
+## The Passive-Aggressive Abstinence Method
+Credit: @donkoch
+
+```bash
+$ alias vim=/bin/false
 ```
 
 ## The shortest way
