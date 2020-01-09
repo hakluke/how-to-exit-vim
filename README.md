@@ -337,6 +337,16 @@ Credit: @mqchen
 9. Review burn down chart together with the team.
 10. Schedule retrospective.
 
+## The spiritual way 
+  Credit: @Janice-M
+1. Take a cleansing bath
+2. Weditate
+3. Sage your house
+4. Place crystals on your laptop
+5. Burn your laptop and whole house down
+6. Set your slack status to 'away' indefinitely
+7. Move to the forest
+
 ## The tmux way
 Credit: @vcoutasso
 
@@ -345,7 +355,7 @@ Inside a tmux session:
 ```
 Ctrl+B :kill-session
 ```
-alternatively
+alternativelycd
 
 ```
 Ctrl+B x y
