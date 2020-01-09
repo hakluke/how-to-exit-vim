@@ -605,3 +605,17 @@ print('The universe is dead, VIM no longer exists');
 1. Try CTRL+C
 2. Ask a senior engineer
 3. Have senior engineer direct you to [how-to-exit-vim](https://github.com/hakluke/how-to-exit-vim)
+
+
+## The AWS Way
+1. In AWS EC2, select **Launch Instance**.
+2. Launch an EC2 instance with a Linux based AMI.
+3. ssh into the newly created EC2 instance
+```shell
+ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
+```
+4. Launch vim
+```shell
+vim
+```
+5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
