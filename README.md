@@ -422,6 +422,10 @@ Ctrl+B x y
 
 Note that ```Ctrl+B``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
 
+## The Mathematician's way
+
+Define yourself outside vim.
+
 ## The Intern way
 Credit: @johnoct
 
