@@ -584,6 +584,10 @@ while heat_death()==False:
 print('The universe is dead, VIM no longer exists');
 ```
 
+## The Jeffrey Way
+
+![Jeffrey Way](assets/jeffrey.jpeg)
+
 ## The Entry Level Software Engineer way
 1. Try CTRL+C
 2. Ask a senior engineer
