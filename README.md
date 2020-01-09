@@ -378,3 +378,9 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The hardware technician's way
+Credit: @KlaymenDK
+
+1. Flip the power switch.
+2. Realize you need another cup of coffee.
