@@ -229,7 +229,7 @@ Credit: @tartansandal
 If you run Vim in a docker container like:
 
 ```bash
-docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim
+docker run --name my-vim -v `pwd`:/root thinca/vim
 ```
 
 then you would normally exit vim by stopping the associated container:
@@ -282,7 +282,7 @@ Credit: @Evalle
 If you run Vim in Kubernetes pod like:
 
 ```bash
-kubectl run --generator=run-pod/v1 --rm -it my-vim  --image=thinkca/vim
+kubectl run --generator=run-pod/v1 my-vim  --image=thinca/vim
 ```
 
 then you would normally exit Vim by deleting the associated Kubernetes pod:
