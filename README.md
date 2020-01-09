@@ -378,3 +378,8 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## _the_ way
+```vim
+<esc>:q!
+```
