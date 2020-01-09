@@ -441,6 +441,17 @@ Credit: @k-takata
 
 ```
 
+## The SEO Manager way
+Credit: @mikulabc
+
+```
+how to exit vim
+vim exit help
+vim exit guide
+exit him
+how exit vim
+```
+
 ### Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
