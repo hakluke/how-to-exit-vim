@@ -536,6 +536,21 @@ Credit @u2mejc
 :!kill -9 $PPID
 ```
 
+## The Newbie Way
+```
+git commit
+```
+
+???
+```
+^x ^x ^x ^d ^c afawfuhi WHAT IS GOING ON faffae ^x
+```
+
+In Google:
+```
+"what is default text editor for git?" | "How to exit vim"
+```
+
 ## the SSH way
 Credit @u2mejc
 
