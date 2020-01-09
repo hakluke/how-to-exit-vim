@@ -376,13 +376,6 @@ $ lldb `which vim`
 Ctrl-C q <Enter> <Enter>
 ```
 
-## The test driven development way
-Credit: @axelf4
-
-```vim
-:echom test_null_list()
-```
-
 ## The libcall way
 Credit: @k-takata
 
