@@ -452,6 +452,22 @@ Credit: @ligurio
 :!q
 ```
 
+## The Scrum manager way
+
+1. Call in a meeting, early in the morning
+2. Tell everybody what a good job they are doing.
+3. Tell everybody that there is still a lot to do.
+4. Tell everybody that "we" can do it.
+5. Remind them of the importance of team work.
+6. Go through the tickets.
+7. Tell the project manager that a ticket for closing Vim is missing.
+8. Write a ticket called "As a user I want to exit Vim!" on your own.
+8.1. While reminding everybody that this is not the proper process.
+9. Discuss new ticket in group.
+10. Reword ticket as "As a user I want to be able to open other applications!"
+11. Ask who of the team wants to do this.
+12. Postpone decision until the next meeting.
+
 ## the pure BASH way
 Credit @u2mejc
 
