@@ -419,7 +419,9 @@ Credit: @k-takata
 ### Windows
 ```vim
 :call libcallnr('kernel32.dll', 'ExitProcess', 0)
+
 ```
+
 ### Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
@@ -452,3 +454,21 @@ Credit @u2mejc
 3. Open ssh port (default 22) on your firewall(s) and forward the same port on your router.
 4. Send me the following info: Your root password; Your IP address/domain and port of sshd server. I recommend you test that it works before sending.
 5. I will kill vim for you!
+
+## The astronomer's way
+Credit: @idisposable
+
+```python
+from secrets import randbits
+
+def heat_death():
+    return False
+    
+def increase_entropy():
+    return randbits(64)
+
+while heat_death()==False:
+    increase_entropy();
+
+print('The universe is dead, VIM no longer exists');
+```
