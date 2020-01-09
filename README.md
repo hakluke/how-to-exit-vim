@@ -378,3 +378,10 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The canonical way
+Credit: @ligurio
+
+```vim
+:!q
+```
