@@ -378,3 +378,13 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The Manager's way
+1. Listen to a conference talk on the cost of running vim.
+2. Hire an management consultant to find out what vim is.
+3. Hire a strategic consultant to conduct a SWOT analysis on vim and develop a business case justification for exiting vim.
+4. Hire a technical management consultant to run an RFP and choose a system integrator for the project of exiting vim.
+5. Hire a system integrator to develop a technical concept for exiting vim.
+6. Systemintrgrater hires a freelancer to implement the concept of exiting.
+7. Freelancer comes and exits vim.
+
