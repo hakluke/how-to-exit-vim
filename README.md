@@ -378,3 +378,8 @@ Credit: @axelf4
 ```vim
 :echom test_null_list()
 ```
+
+## The user way
+Credit: @samuraii
+
+Reboot the device.
