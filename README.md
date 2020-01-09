@@ -9,6 +9,8 @@ Credit: @tomnomnom
 ```vim
 :!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
+### Video tutorial:
+[![tomnomnom](http://img.youtube.com/vi/xteTjU8GNMc/0.jpg)](http://www.youtube.com/watch?v=xteTjU8GNMc "tomnomnom")
 
 ## The ps-less way
 Credit: @tomnomnom
