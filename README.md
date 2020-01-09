@@ -379,12 +379,11 @@ Ctrl-C q <Enter> <Enter>
 ## The libcall way
 Credit: @k-takata
 
-Windows
+### Windows
 ```vim
 :call libcallnr('kernel32.dll', 'ExitProcess', 0)
 ```
-
-Linux
+### Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
 
@@ -393,6 +392,20 @@ Credit: @ligurio
 
 ```vim
 :!q
+```
+
+## the pure BASH way
+Credit @u2mejc
+
+```bash
+:!kill -9 $PPID
+```
+
+## the SSH way
+Credit @u2mejc
+
+```
+~.
 ```
 
 ## Quit as a Service (QaaS)
