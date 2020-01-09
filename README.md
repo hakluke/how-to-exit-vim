@@ -489,3 +489,11 @@ while heat_death()==False:
 
 print('The universe is dead, VIM no longer exists');
 ```
+
+## The Solaris way
+Credit: @lbonanomi
+
+```vim
+:!pkill -9 -u $(id -u $USER) -f vi
+```
+
