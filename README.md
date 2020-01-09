@@ -38,6 +38,13 @@ Credit: @hakluke
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
 ```
+## The Rustacean's way
+Credit: @wodny
+
+1. Reimplement vim in Rust.
+2. Call the project `rim`.
+3. Run `rim`.
+4. Exit `rim` using a borrowed command, ie. `:q!`.
 
 ## The Colon-less way
 Credit: @w181496
