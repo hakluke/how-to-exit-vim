@@ -518,6 +518,7 @@ how exit vim
 ### Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
+```
 
 ## The canonical way
 Credit: @ligurio
