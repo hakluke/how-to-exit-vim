@@ -46,6 +46,20 @@ Credit: @wodny
 3. Run `rim`.
 4. Exit `rim` using a borrowed command, ie. `:q!`.
 
+## The lazy rubist using shell way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'system("killall -9 vim")'
+```
+
+## The rubist way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'pid = `pidof vim`; Process.kill(9, pid.to_i)'
+```
+
 ## The Colon-less way
 Credit: @w181496
 
