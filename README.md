@@ -639,3 +639,9 @@ ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
 vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
+
+## The Rich Kid Way
+1. close laptop / turn off desktop.
+2. unplug any peripherals (we want to reuse as much as possible).
+3. throw away laptop / desktop.
+4. buy a new laptop / desktop.
