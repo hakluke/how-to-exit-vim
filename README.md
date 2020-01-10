@@ -41,6 +41,14 @@ Credit: @hakluke
 ('utf-8')),signal.SIGTERM)
 ```
 
+## The chaotic neutral python wizard's way
+Credit: @Red-M
+
+```python
+:py3 __import__('os').kill(int(__import__('subprocess').check_output(["pidof","vim"]).decode
+('utf-8')),__import__('signal').SIGTERM)
+```
+
 ## The pure perl way
 ```perl
 :!perl -e 'while(</proc/*>){open($f, "$_/cmdline"); kill 9, substr($_,6) if <$f> =~ m|^vim\x00| }'  
