@@ -517,13 +517,13 @@ Credit: @85danf
 "There is no vim"
 
 ## The SEO Manager way
-Credit: @mikulabc
+Credit: @mikulabc @rahmatrhd
 
 ```
 how to exit vim
 vim exit help
 vim exit guide
-exit him
+exit bim
 how exit vim
 ```
 
