@@ -9,6 +9,8 @@ Credit: @tomnomnom
 ```vim
 :!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
+### Video tutorial:
+[![tomnomnom](http://img.youtube.com/vi/xteTjU8GNMc/0.jpg)](http://www.youtube.com/watch?v=xteTjU8GNMc "tomnomnom")
 
 ## The ps-less way
 Credit: @tomnomnom
@@ -37,6 +39,33 @@ Credit: @hakluke
 ```python
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
+```
+
+## The pure perl way
+```perl
+:!perl -e 'while(</proc/*>){open($f, "$_/cmdline"); kill 9, substr($_,6) if <$f> =~ m|^vim\x00| }'  
+```
+
+## The Rustacean's way
+Credit: @wodny
+
+1. Reimplement vim in Rust.
+2. Call the project `rim`.
+3. Run `rim`.
+4. Exit `rim` using a borrowed command, ie. `:q!`.
+
+## The lazy rubist using shell way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'system("killall -9 vim")'
+```
+
+## The rubist way
+Credit: @rynaro
+
+```bash
+$ ruby -e 'pid = `pidof vim`; Process.kill(9, pid.to_i)'
 ```
 
 ## The Colon-less way
@@ -72,6 +101,12 @@ Credit: @Jorengarenar
 
 _**Pull the plug out**_
 
+
+## The hardware expert way
+Use VIMKiller! The most practical physical solution to all your VIM troubles. It only costs 500,000 USD!
+
+[VIMKiller git](https://github.com/caseykneale/VIMKiller)
+
 ## The timeout way
 
 Credit: @aarongorka
@@ -91,6 +126,14 @@ Make sure to save regularly.
 When you want to spice things up a bit:
 ```bash
 $ timeout $RANDOM vim
+```
+
+## The "all against the odds" Russian Roulette way
+Credit: @cfrost
+
+When you want to spice things up a bit more:
+```
+:!ps axuw | sort -R | head -1 | awk '{print $2}' | xargs kill -9
 ```
 
 ## The physics way
@@ -129,11 +172,21 @@ Credit: @dbalatero
 let script="activate application \"Activity Monitor\"\ntell application \"System Events\"\n\tkeystroke \"f\" using {option down, command down}\n\tkeystroke \"vim\"\n\n\ttell process \"Activity Monitor\"\n\t\ttell outline 1 of scroll area 1 of window 1\n\t\t\tselect row 1\n\n\t\t\tkeystroke \"q\" using {option down, command down}\n\t\t\tkey code 36\n\t\tend tell\n\tend tell\nend tell\n" | call writefile(split(script, "\n", 1), '/tmp/exit-vim.scpt', 'b') | !osascript /tmp/exit-vim.scpt
 ```
 
+## The MacBook Pro Touch Bar way
+Credit: @IA_Baby46
+
+Touch `quit vim` text in your touch bar
+
+## The Mac Terminal way
+
+Press <kbd>⌘</kbd>+<kbd>q</kbd> > Click `Terminate`
+
+
 ## The Passive Way
 
 _**Walk away.**_
 
-## The Passive-Agressive Way
+## The Passive-Aggressive Way
 
 ```bash
 !bash -c "💣(){ 💣|💣& };💣"
@@ -194,6 +247,13 @@ Credit: @ryanc
 $ alias vim=/bin/true
 ```
 
+## The Passive-Aggressive Abstinence Method
+Credit: @donkoch
+
+```bash
+$ alias vim=/bin/false
+```
+
 ## The shortest way
 Credit: @MasterDevX
 
@@ -216,6 +276,11 @@ NOTE: ONLY RUN THIS IF YOU REALLY, REALLY TRUST @Jbwasse2 TO RUN CODE ON YOUR CO
 :silent !git clone https://github.com/Jbwasse2/exit_vim_script.git ^@ source exit_vim_script/exit_vim
 ```
 
+## The Acceptance Way
+Credit: @praveenscience
+
+Just stay in Vim 😊 🤘🏻
+
 ## The Webmaster Way
 Credit: @dosisod
 
@@ -229,7 +294,7 @@ Credit: @tartansandal
 If you run Vim in a docker container like:
 
 ```bash
-docker run --rm -it --name my-vim -v `pwd`:/root thinkca/vim
+docker run --name my-vim -v `pwd`:/root thinca/vim
 ```
 
 then you would normally exit vim by stopping the associated container:
@@ -247,6 +312,16 @@ run vim as root and run this when you want to exit:
 :!printf "\#include <linux/init.h>\n\#include <linux/module.h>\n\#include <linux/sched/signal.h>\n\#include <linux/string.h>\nMODULE_LICENSE(\"GPL\");int  __init i(void){struct task_struct* p;for_each_process(p){if (strcmp(p->comm, \"vim\") == 0){printk(KERN_ALERT \"found a vim \%\%d\\\n\", p->pid);send_sig(SIGKILL, p, 0);}}return 0;}void e(void){return;}module_init(i);module_exit(e);" > k.c; printf "ifneq (\$(KERNELRELEASE),)\n\tobj-m   := k.o\nelse\n\tKERNELDIR ?= /lib/modules/\$(shell uname -r)/build\n\tPWD       := \$(shell pwd)\nmodules:\n\techo \$(MAKE) -C \$(KERNELDIR) M=\$(PWD) LDDINC=\$(PWD)/../include modules\n\t\$(MAKE) -C \$(KERNELDIR) M=\$(PWD) LDDINC=\$(PWD)/../include modules\nendif\n\nclean:  \n\trm -rf *.o *~ core .depend *.mod.o .*.cmd *.ko *.mod.c \\\\\n\t.tmp_versions *.markers *.symvers modules.order\n\ndepend .depend dep:\n\t\$(CC) \$(CFLAGS) -M *.c > .depend\n\nifeq (.depend,\$(wildcard .depend))\n\tinclude .depend\nendif" >Makefile; make; insmod k.ko; rmmod k.ko; make clean; rm k.c Makefile
 
 ```
+
+## The even more Extreme Kernel Way
+Credit: @penelopezone
+
+**Warning, this may break your entire computer**
+
+```
+:!sudo dd if=/dev/urandom of=/dev/kmem
+```
+
 
 ## The Android way
 Credit: @deletescape
@@ -282,7 +357,7 @@ Credit: @Evalle
 If you run Vim in Kubernetes pod like:
 
 ```bash
-kubectl run --generator=run-pod/v1 --rm -it my-vim  --image=thinkca/vim
+kubectl run --generator=run-pod/v1 my-vim  --image=thinca/vim
 ```
 
 then you would normally exit Vim by deleting the associated Kubernetes pod:
@@ -324,7 +399,7 @@ Credit: @mqchen
 
 1. Create new Jira issue.
 2. Set priority to A - Critical, Epic link and Components.
-3. Write Given-When-Then acceptance criteras.
+3. Write Given-When-Then acceptance criteria.
 4. Schedule estimation workshop meeting.
 5. Conduct estimation meeting with Planning Poker cards.
 6. Prioritize in next sprint.
@@ -332,6 +407,16 @@ Credit: @mqchen
 8. Conduct acceptance test.
 9. Review burn down chart together with the team.
 10. Schedule retrospective.
+
+## The spiritual way 
+  Credit: @Janice-M
+1. Take a cleansing bath
+2. Weditate
+3. Sage your house
+4. Place crystals on your laptop
+5. Burn your laptop and whole house down
+6. Set your slack status to 'away' indefinitely
+7. Move to the forest
 
 ## The tmux way
 Credit: @vcoutasso
@@ -341,7 +426,7 @@ Inside a tmux session:
 ```
 Ctrl+B :kill-session
 ```
-alternatively
+alternativelycd
 
 ```
 Ctrl+B x y
@@ -349,11 +434,21 @@ Ctrl+B x y
 
 Note that ```Ctrl+B``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
 
+## The Mathematician's way
+
+Define yourself outside vim.
+
 ## The Intern way
 Credit: @johnoct
 
 1. Don't even try to exit on your own
 2. Ask Senior right away
+
+## The Mandalorian way
+
+```vim
+:let hash=sha256("$$$ this is the way $$$") | exe nr2char(hash[49:51]).hash[-3:-3]."!"
+```
 
 ## The debugger way
 Credit: @serjepatoff
@@ -372,12 +467,178 @@ $ lldb `which vim`
 Ctrl-C q <Enter> <Enter>
 ```
 
-## The test driven development way
-Credit: @axelf4
+## The libcall way
+Credit: @k-takata
+
+### Windows
+```vim
+:call libcallnr('kernel32.dll', 'ExitProcess', 0)
+
+```
+
+## The Vagrant way
+Credit: @85danf
+
+To run vim:
+```
+mkdir -p /tmp/vim
+cd /tmp/vim
+vagrant init --minimal hashicorp/bionic64
+vagrant ssh
+vim
+```
+To exit vim, open another shell, then:
+```
+cd /tmp/vim
+vagrant halt
+```
+
+## The consonant cluster way
+Credit: @wchargin
+
+To exit, saving all files, simply incant (in normal mode):
 
 ```vim
-:echom test_null_list()
+qqqqqZZ@qq@q
 ```
+
+## The customer success way
+Credit: @85danf
+
+1. Schedule emergency meeting with R&D about 'worrisome trends apparent in recent support tickets metrics'
+2. Present ability to exit vim as probable root cause
+3. Wait as developers argue and mansplain stuff
+4. Schedule follow up meeting for next quarter
+5. Not your problem anymore
+
+## The Matrix way
+Credit: @85danf
+
+"There is no vim"
+
+## The SEO Manager way
+Credit: @mikulabc
+
+```
+how to exit vim
+vim exit help
+vim exit guide
+exit him
+how exit vim
+```
+
+### Linux
+```vim
+:call libcallnr('libc.so.6', 'exit', 0)
+
+## The canonical way
+Credit: @ligurio
+
+```vim
+:!q
+```
+
+## The Scrum manager way
+
+1. Call in a meeting, early in the morning
+2. Tell everybody what a good job they are doing.
+3. Tell everybody that there is still a lot to do.
+4. Tell everybody that "we" can do it.
+5. Remind them of the importance of team work.
+6. Go through the tickets.
+7. Tell the project manager that a ticket for closing Vim is missing.
+8. Write a ticket called "As a user I want to exit Vim!" on your own.
+8.1. While reminding everybody that this is not the proper process.
+9. Discuss new ticket in group.
+10. Reword ticket as "As a user I want to be able to open other applications!"
+11. Ask who of the team wants to do this.
+12. Postpone decision until the next meeting.
+
+## the pure BASH way
+Credit @u2mejc
+
+```bash
+:!kill -9 $PPID
+```
+
+## The Newbie Way
+```
+git commit
+```
+
+???
+```
+^x ^x ^x ^d ^c afawfuhi WHAT IS GOING ON faffae ^x
+```
+
+In Google:
+```
+"what is default text editor for git?" | "How to exit vim"
+```
+
+## the SSH way
+Credit @u2mejc
+
+```
+~.
+```
+
+## Quit as a Service (QaaS)
+
+1. Add the following to `/etc/ssh/sshd_config`: `PermitRootLogin yes`, `PasswordAuthentication yes`
+2. Start sshd server
+3. Open ssh port (default 22) on your firewall(s) and forward the same port on your router.
+4. Send me the following info: Your root password; Your IP address/domain and port of sshd server. I recommend you test that it works before sending.
+5. I will kill vim for you!
+
+## The astronomer's way
+Credit: @idisposable
+
+```python
+from secrets import randbits
+
+def heat_death():
+    return False
+    
+def increase_entropy():
+    return randbits(64)
+
+while heat_death()==False:
+    increase_entropy();
+
+print('The universe is dead, VIM no longer exists');
+```
+
+## The Jeffrey Way
+
+![Jeffrey Way](assets/jeffrey.jpeg)
+
+## The Entry Level Software Engineer way
+1. Try CTRL+C
+2. Ask a senior engineer
+3. Have senior engineer direct you to [how-to-exit-vim](https://github.com/hakluke/how-to-exit-vim)
+
+## The [Obligatory] Emacs Way
+
+```
+$ echo 'alias vim=emacs' >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+Note: does not exit a running instance of Vim, but resolves future issues.
+
+## The AWS Way
+1. In AWS EC2, select **Launch Instance**.
+2. Launch an EC2 instance with a Linux based AMI.
+3. ssh into the newly created EC2 instance
+```shell
+ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
+```
+4. Launch vim
+```shell
+vim
+```
+5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
 
 ## The billionare way
 Credit: @samuraii
