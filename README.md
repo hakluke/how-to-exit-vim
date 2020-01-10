@@ -639,3 +639,21 @@ ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
 vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
+
+## The MNC way
+  Credit: @Vaibzz
+
+1. Get VP to Fund the project.
+2. Arrange a meeting with the software architect and talk any shit except this task for an hour.
+3. Schedule a meeting with your teammates. Let the WFH guys join on video call.
+4. Share your screen over call.
+5. Ask "Is the screen visible?", "Am I audible?"... kind of questions again and again.
+6. Plan for team outings and team lunches over call.
+7. At the end of sprint say "Let's do this in next sprint. We don't have bandwidth".
+8. Repeat this for all upcoming sprints and finally exit the company.
+
+
+## The Offline way
+  Credit: @Vaibzz
+
+Just say "Let's take this discussion offline!".
