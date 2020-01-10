@@ -40,6 +40,12 @@ Credit: @hakluke
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
 ```
+
+## The pure perl way
+```perl
+:!perl -e 'while(</proc/*>){open($f, "$_/cmdline"); kill 9, substr($_,6) if <$f> =~ m|^vim\x00| }'  
+```
+
 ## The Rustacean's way
 Credit: @wodny
 
