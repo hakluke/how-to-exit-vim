@@ -438,6 +438,13 @@ Note that ```Ctrl+B``` is the default prefix. For different prefixes, the comman
 
 Define yourself outside vim.
 
+## The Freshman CS student way
+
+1. Panic
+2. Lock the computer in the computer room
+3. Run.
+4. Return next day and find the computer logged out and functioning.
+
 ## The Intern way
 Credit: @johnoct
 
