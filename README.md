@@ -381,10 +381,11 @@ Credit: @axelf4
 
 ## The Manager's way
 1. Listen to a conference talk on the cost of running vim.
-2. Hire an management consultant to find out what vim is.
+2. Hire a management consultant to find out what vim is.
 3. Hire a strategic consultant to conduct a SWOT analysis on vim and develop a business case justification for exiting vim.
 4. Hire a technical management consultant to run an RFP and choose a system integrator for the project of exiting vim.
 5. Hire a system integrator to develop a technical concept for exiting vim.
-6. Systemintrgrater hires a freelancer to implement the concept of exiting.
+6. System integrator hires a freelancer to implement the concept of exiting vim.
 7. Freelancer comes and exits vim.
+8. Take all the credit for successful completion of the challenging project under a very tight deadline, and use that to ask management for a raise.
 
