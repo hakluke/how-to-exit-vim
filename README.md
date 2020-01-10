@@ -467,6 +467,13 @@ $ lldb `which vim`
 Ctrl-C q <Enter> <Enter>
 ```
 
+## The other debugger way
+Credit: @w-ew
+
+```
+$ ps aux | grep vim$ | grep -v grep | awk '{print $2}' | xargs -I{} gdb --pid {} --ex "call exit(-1)"
+```
+
 ## The libcall way
 Credit: @k-takata
 
