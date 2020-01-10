@@ -640,7 +640,7 @@ vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
 
-## The Rich Kid Way
+## The Economical Way
 1. close laptop / turn off desktop.
 2. unplug any peripherals (we want to reuse as much as possible).
 3. throw away laptop / desktop.
