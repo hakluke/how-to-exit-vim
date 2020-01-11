@@ -639,3 +639,24 @@ ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
 vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
+
+## The AWS Startup way
+### aka Russian roulette mode
+### aka Schrödinger's cat mode
+
+1. In AWS EC2, select **Launch Instance**.
+2. Launch an EC2 instance with a Linux based AMI.
+3. ssh into the newly created EC2 instance
+```shell
+chmod 400 <ec2 keypair pem location>
+ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
+```
+4. Launch vim
+```shell
+vim
+```
+5. Generate Key and Secret for the root account and use it in your code
+6. Commit those credentials to github
+7. Wait
+
+_may incur additional charges due to credentials being used by third party for bitcoin mining_
