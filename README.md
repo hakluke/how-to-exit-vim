@@ -68,6 +68,13 @@ Credit: @rynaro
 $ ruby -e 'pid = `pidof vim`; Process.kill(9, pid.to_i)'
 ```
 
+## The rubist way (in vim)
+Credit: @sj26
+
+```vim
+:ruby Process.kill :TERM, Process.pid
+```
+
 ## The Colon-less way
 Credit: @w181496
 
