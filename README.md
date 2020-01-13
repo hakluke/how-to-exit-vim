@@ -639,3 +639,10 @@ ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
 vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
+
+## The Vim way in command-mode
+
+```plaintext
+ZZ to save and quit
+ZQ to just quit
+```
