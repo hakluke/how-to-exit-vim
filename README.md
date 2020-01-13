@@ -40,12 +40,6 @@ Credit: @hakluke
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
 ```
-
-## The pure perl way
-```perl
-:!perl -e 'while(</proc/*>){open($f, "$_/cmdline"); kill 9, substr($_,6) if <$f> =~ m|^vim\x00| }'  
-```
-
 ## The Rustacean's way
 Credit: @wodny
 
@@ -100,12 +94,6 @@ $ curl "http://localhost:8888/$(ps aux | grep -E -o 'kill-vi-[0-9]+')"
 Credit: @Jorengarenar
 
 _**Pull the plug out**_
-
-
-## The hardware expert way
-Use VIMKiller! The most practical physical solution to all your VIM troubles. It only costs 500,000 USD!
-
-[VIMKiller git](https://github.com/caseykneale/VIMKiller)
 
 ## The timeout way
 
@@ -530,6 +518,7 @@ how exit vim
 ### Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
+```
 
 ## The canonical way
 Credit: @ligurio
@@ -617,25 +606,3 @@ print('The universe is dead, VIM no longer exists');
 1. Try CTRL+C
 2. Ask a senior engineer
 3. Have senior engineer direct you to [how-to-exit-vim](https://github.com/hakluke/how-to-exit-vim)
-
-## The [Obligatory] Emacs Way
-
-```
-$ echo 'alias vim=emacs' >> ~/.bashrc
-$ source ~/.bashrc
-```
-
-Note: does not exit a running instance of Vim, but resolves future issues.
-
-## The AWS Way
-1. In AWS EC2, select **Launch Instance**.
-2. Launch an EC2 instance with a Linux based AMI.
-3. ssh into the newly created EC2 instance
-```shell
-ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
-```
-4. Launch vim
-```shell
-vim
-```
-5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
