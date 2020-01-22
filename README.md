@@ -639,3 +639,8 @@ ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
 vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
+
+## The AWS CLI Wau
+```
+!aws --region `ec2-metadata --availability-zone | sed 's/placement: \(.*\).$/\1/'` ec2 stop-instances --instance-ids `wget -q -O - http://169.254.169.254/latest/meta-data/instance-id`
+```
