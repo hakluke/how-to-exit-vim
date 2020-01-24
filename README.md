@@ -650,3 +650,8 @@ Credit:@Tomcat-42
 5. Your computer should no longer be running vim
 
 **Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
+
+## The Permanent Way
+Credit: @jofftiquez
+
+***Quit software engineering for good.***
