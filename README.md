@@ -33,6 +33,13 @@ Credit: @kpumuk
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
 
+## The lazy pythonic using shell way
+Credit: @PozziSan
+
+```bash
+python -c "from os import system; system('killall -9 vim')"
+````
+
 ## The pythonic way
 Credit: @hakluke
 
