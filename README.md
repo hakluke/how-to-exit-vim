@@ -643,4 +643,4 @@ vim
 ## The Permanent Way
 Credit: @jofftiquez
 
-***Quit software eingineering for good.***
+***Quit software engineering for good.***
