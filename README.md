@@ -640,6 +640,17 @@ vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
 
+## The Circuit Breaker Way
+Credit:@Tomcat-42
+
+1. Smoothly leave your computer
+2. Find the nearest electrical circuit breaker panel
+3. Switch off and on the main breaker
+4. Return to your computer
+5. Your computer should no longer be running vim
+
+**Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
+
 ## The Permanent Way
 Credit: @jofftiquez
 
