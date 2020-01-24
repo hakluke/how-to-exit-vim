@@ -33,6 +33,13 @@ Credit: @kpumuk
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
 
+## The lazy pythonic using shell way
+Credit: @PozziSan
+
+```bash
+python -c "from os import system; system('killall -9 vim')"
+````
+
 ## The pythonic way
 Credit: @hakluke
 
@@ -656,3 +663,19 @@ echo "set modeline" >> .vimrc
 ```
 :e! quit.txt
 ```
+
+## The Circuit Breaker Way
+Credit:@Tomcat-42
+
+1. Smoothly leave your computer
+2. Find the nearest electrical circuit breaker panel
+3. Switch off and on the main breaker
+4. Return to your computer
+5. Your computer should no longer be running vim
+
+**Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
+
+## The Permanent Way
+Credit: @jofftiquez
+
+***Quit software engineering for good.***
