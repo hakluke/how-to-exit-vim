@@ -683,5 +683,5 @@ Credit: @jofftiquez
 ## The GitHub Issues Way
 Credit: @ZeroAurora
 
-1. In a repository (let's call it "my-computer"), create a issue named "vim".
+1. In a repository (let's call it "my-computer"), create a issue titled "vim".
 2. Close it.
