@@ -679,3 +679,9 @@ Credit:@Tomcat-42
 Credit: @jofftiquez
 
 ***Quit software engineering for good.***
+
+## The GitHub Issues Way
+Credit: @ZeroAurora
+
+1. In a repository (let's call it "my-computer"), create a issue named "vim".
+2. Close it.
