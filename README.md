@@ -679,3 +679,38 @@ Credit:@Tomcat-42
 Credit: @jofftiquez
 
 ***Quit software engineering for good.***
+
+## The Ansible Way
+Credit: @lpmi-13
+
+run vim.yml playbook with the following contents:
+
+```
+---
+- hosts: vimbox
+
+  vars:
+    required_packages:
+    - vim
+
+  tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+  - name: Update APT package cache
+    apt:
+      update_cache: yes
+
+  - name: Run apt-get upgrade
+    apt: upgrade=safe
+
+  - name: Install required packages
+    apt: state=installed pkg={{ item }}
+    with_items: "{{ required_packages }}"
+
+  - name: Start Vim in the background.
+    shell: "(vim >/dev/null 2>&1 &)"
+  
+  - name: Quit Vim.
+    shell: "(pkill vim)"
+```
