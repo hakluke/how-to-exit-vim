@@ -480,7 +480,18 @@ Credit: @k-takata
 ### Windows
 ```vim
 :call libcallnr('kernel32.dll', 'ExitProcess', 0)
+```
 
+### Linux
+```vim
+:call libcallnr('libc.so.6', 'exit', 0)
+```
+
+## The canonical way
+Credit: @ligurio
+
+```vim
+:!q
 ```
 
 ## The Vagrant way
@@ -532,17 +543,6 @@ vim exit help
 vim exit guide
 exit him
 how exit vim
-```
-
-### Linux
-```vim
-:call libcallnr('libc.so.6', 'exit', 0)
-
-## The canonical way
-Credit: @ligurio
-
-```vim
-:!q
 ```
 
 ## The Scrum manager way
