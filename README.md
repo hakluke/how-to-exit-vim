@@ -534,9 +534,10 @@ exit him
 how exit vim
 ```
 
-### Linux
+## Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
+```
 
 ## The canonical way
 Credit: @ligurio
@@ -667,18 +668,13 @@ echo "set modeline" >> .vimrc
 ## The Circuit Breaker Way
 Credit:@Tomcat-42
 
-1. Smoothly leave your computer
+1. Leave your computer
 2. Find the nearest electrical circuit breaker panel
 3. Switch off and on the main breaker
 4. Return to your computer
 5. Your computer should no longer be running vim
 
 **Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
-
-## The Permanent Way
-Credit: @jofftiquez
-
-***Quit software engineering for good.***
 
 ## The Ansible Way
 Credit: @lpmi-13
@@ -714,3 +710,9 @@ run vim.yml playbook with the following contents:
   - name: Quit Vim.
     shell: "(pkill vim)"
 ```
+
+## The Stack Overflow Way
+Credit: @cobaltblu27
+
+*Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
+
