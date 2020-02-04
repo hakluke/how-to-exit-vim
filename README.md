@@ -653,6 +653,7 @@ Credit: @ccw630
 
 ```vim
 :!$SHELL
+```
 
 ## The AWS CLI Way
 ```
