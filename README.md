@@ -732,6 +732,8 @@ Credit: @cobaltblu27
 ## The Bash Script Way
 Credit: @OskarSchamardin
 
+create a script called exitvi.sh, copy-paste code below, add execute privileges and run.
+
 ```vim
 #!/bin/bash
 
