@@ -728,3 +728,71 @@ Credit: @cobaltblu27
 
 *Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
+
+## The Bash Script Way
+Credit: @OskarSchamardin
+
+```vim
+#!/bin/bash
+
+# this script will find all processes named 'vi', 'vim', 'gvim' and 'nvim' and kill them
+# script by Oskar Schamardin <oskarotto.schamardin@tptlive.ee>
+# ironically written with the help on neovim...
+
+murder()
+{
+    killall $1
+    echo "killed $1."
+}
+
+while true $# -gt 0; do
+    case "$1" in
+        -h|--help)
+            echo "exitvi - kill all instances of vi and it's forks."
+            echo "flags available:"
+            echo " "
+            echo "-h, --help                show help."
+            echo "<no-flag>                 Kill all processes named 'vi', 'vim', 'gvim' and 'nvim'."
+            exit 0
+            ;;
+        '')
+
+            pidof nvim > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "nvim"
+            fi
+
+            pidof vim > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "vim"
+            fi
+
+            pidof vi > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "vi"
+            fi
+
+            pidof gvim > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "vi"
+            fi
+
+            echo "Vim is not open. :)"
+            exit 0
+            ;;
+        *)
+            echo "Invalid flag, available:"
+            echo " "
+            echo "-h, --help                show help."
+            echo "<no-flag>                 Kill all processes named 'vi', 'vim', 'gvim' adn 'nvim'."
+            exit 1
+            ;;
+    esac
+done
+```
+
+
