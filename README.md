@@ -778,7 +778,7 @@ while true $# -gt 0; do
             pidof gvim > /dev/null
             if ! [ $? -ne "0" ]
             then
-                murder "vi"
+                murder "gvim"
             fi
 
             echo "Vim is not open. :)"
