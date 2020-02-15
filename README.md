@@ -788,7 +788,7 @@ while true $# -gt 0; do
             echo "Invalid flag, available:"
             echo " "
             echo "-h, --help                show help."
-            echo "<no-flag>                 Kill all processes named 'vi', 'vim', 'gvim' adn 'nvim'."
+            echo "<no-flag>                 Kill all processes named 'vi', 'vim', 'gvim' and 'nvim'."
             exit 1
             ;;
     esac
