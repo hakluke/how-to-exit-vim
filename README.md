@@ -734,7 +734,7 @@ Credit: @OskarSchamardin
 
 create a script called exitvi.sh, copy-paste code below, add execute privileges and run.
 
-```vim
+```bash
 #!/bin/bash
 
 # this script will find all processes named 'vi', 'vim', 'gvim' and 'nvim' and kill them
