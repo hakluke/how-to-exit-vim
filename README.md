@@ -648,6 +648,18 @@ vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
 
+## The Matryoshka Way
+Credit: @ccw630
+
+```vim
+:!$SHELL
+```
+
+## The AWS CLI Way
+```
+!aws --region `ec2-metadata --availability-zone | sed 's/placement: \(.*\).$/\1/'` ec2 stop-instances --instance-ids `wget -q -O - http://169.254.169.254/latest/meta-data/instance-id`
+```
+
 ## The Arbitrary Code Execution Way
 
 Based on https://www.exploit-db.com/exploits/46973. Works with Vim < 8.1.1365.
@@ -668,7 +680,7 @@ echo "set modeline" >> .vimrc
 ## The Circuit Breaker Way
 Credit:@Tomcat-42
 
-1. Smoothly leave your computer
+1. Leave your computer
 2. Find the nearest electrical circuit breaker panel
 3. Switch off and on the main breaker
 4. Return to your computer
@@ -676,15 +688,46 @@ Credit:@Tomcat-42
 
 **Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
 
-## The Permanent Way
-Credit: @jofftiquez
+## The Ansible Way
+Credit: @lpmi-13
 
-***Quit software engineering for good.***
+run vim.yml playbook with the following contents:
+
+```
+---
+- hosts: vimbox
+
+  vars:
+    required_packages:
+    - vim
+
+  tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+  - name: Update APT package cache
+    apt:
+      update_cache: yes
+
+  - name: Run apt-get upgrade
+    apt: upgrade=safe
+
+  - name: Install required packages
+    apt: state=installed pkg={{ item }}
+    with_items: "{{ required_packages }}"
+
+  - name: Start Vim in the background.
+    shell: "(vim >/dev/null 2>&1 &)"
+  
+  - name: Quit Vim.
+    shell: "(pkill vim)"
+```
 
 ## The Stack Overflow Way
 Credit: @cobaltblu27
 
 *Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
+
 
 ## The Mario Way
 
