@@ -728,3 +728,15 @@ Credit: @cobaltblu27
 
 *Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
+## The Scheduled Way
+Credit: @jbarbier
+
+1. Edit crontab file using any other editor:
+```
+:!VISUAL=nano crontab -e
+```
+
+2. Insert & save this line to exit vim every minute on the minute:
+```
+* * * * * pkill -9 vi
+```
