@@ -728,3 +728,31 @@ Credit: @cobaltblu27
 
 *Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
+## The Terraform Way
+``` terraform
+provider "aws" {
+	region = "us-east-1"
+}
+
+resource "aws_key_pair" "vim" {
+  key_name   = "vim"
+  public_key = "${file("vim.pub")}"
+}
+
+resource "aws_instance" "vim-launcher" {
+	ami = "ami-04169656fea786776"
+	instance_type = "t2.nano"
+	key_name = "${aws_key_pair.vim.key_name}"
+	user_data = << EOF
+		#! /bin/bash
+   /usr/bin/vim >/dev/null 2>&1 &
+	EOF
+}
+```
+
+``` bash
+terraform apply --auto-approve
+...
+terraform destroy --auto-approve
+```
+
