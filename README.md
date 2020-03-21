@@ -730,6 +730,8 @@ Credit: @cobaltblu27
 
 ## The Go Way
 
+Credit: @youshy
+
 1. Make sure that you have Go installed
 2. Write a whole application to find and kill vim
 
