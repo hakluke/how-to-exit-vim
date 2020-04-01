@@ -739,22 +739,40 @@ create a script called exitvi.sh, copy-paste code below, add execute privileges 
 
 # this script will find all processes named 'vi', 'vim', 'gvim' and 'nvim' and kill them
 # script by Oskar Schamardin <oskarotto.schamardin@tptlive.ee>
-# ironically written with the help on neovim...
+# ironically written with the help of neovim...
+
+# https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+# These colors may depend on the type of terminal you have
+# usage: 'echo -e ${RedColor}foo${NoColor}bar'
+RedColor='\033[0;31m'
+GreenColor='\033[0;32m'
+BrownColor='\033[0;33m'
+BlueColor='\033[0;34m'
+PurpleColor='\033[0;35m'
+CyanColor='\033[0;36m'
+GrayColor='\033[0;37m'
+NoColor='\033[0m'
 
 murder()
 {
     killall $1
-    echo "killed $1."
+    echo -e "killed ${CyanColor}$1${NoColor}."
+}
+
+fnHelpText()
+{
+    echo -e "${CyanColor}flags${NoColor} available:"
+    echo -e " "
+    echo -e "${CyanColor}-h, --help${NoColor}                show ${GreenColor}help${NoColor}."
+    echo -e "${CyanColor}<no-flag>${NoColor}                 Kill all processes named ${RedColor}'vi'${NoColor}, ${RedColor}'vim'${NoColor}, ${RedColor}'gvim'${NoColor} and ${RedColor}'nvim'${NoColor}."
+    return 0;
 }
 
 while true $# -gt 0; do
     case "$1" in
         -h|--help)
-            echo "exitvi - kill all instances of vi and it's forks."
-            echo "flags available:"
-            echo " "
-            echo "-h, --help                show help."
-            echo "<no-flag>                 Kill all processes named 'vi', 'vim', 'gvim' and 'nvim'."
+            echo -e "${GreenColor}exitvi${NoColor} - kill all instances of ${RedColor}vi${NoColor} and it's forks."
+            fnHelpText
             exit 0
             ;;
         '')
@@ -783,14 +801,12 @@ while true $# -gt 0; do
                 murder "gvim"
             fi
 
-            echo "Vim is not open. :)"
+            echo -e "${RedColor}Vim${GreenColor} is not open. :)${NoColor}"
             exit 0
             ;;
         *)
-            echo "Invalid flag, available:"
-            echo " "
-            echo "-h, --help                show help."
-            echo "<no-flag>                 Kill all processes named 'vi', 'vim', 'gvim' and 'nvim'."
+            echo -e "${RedColor}[SCRIPT-ERROR]${NoColor} Invalid ${CyanColor}flag${NoColor}."
+            fnHelpText
             exit 1
             ;;
     esac
