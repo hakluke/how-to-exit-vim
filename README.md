@@ -789,3 +789,13 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Linux Beginner way
+
+1. Open a terminal
+2. Type `kill vim`
+3. Realize it asks for arguments, you don't know what that means
+4. Look it up on Debian wiki
+5. Look it up on another wiki
+6. Accidentally kill a fundemntal Linux process by accident
+7. Boot back to your system and enjoy your Vim-less experience
+8. Try again next week, repeat process
