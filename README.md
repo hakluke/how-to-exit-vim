@@ -789,3 +789,19 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The systemd-nspawn Way
+Credit: @leon-plickat
+
+Create an nspawn-container with `debootstrap`, `pacstrap` or similar (make sure
+vim is installed in the container).
+
+Start the container running vim:
+```
+$ systemd-nspawn -D vim-container/ --user=root vim
+```
+
+To exit vim, kill the container by either by pressing `^]^]^]` inside vim or
+from a shell on the host system:
+```
+$ machinectl kill vim-container
+```
