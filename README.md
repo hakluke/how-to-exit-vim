@@ -135,6 +135,16 @@ When you want to spice things up a bit:
 $ timeout $RANDOM vim
 ```
 
+## The background way 
+
+Credit: @machinexa2
+
+When in vim, type:
+```vim
+:! pkill vim &
+```
+You vim is sent to background and killed.
+
 ## The "all against the odds" Russian Roulette way
 Credit: @cfrost
 
