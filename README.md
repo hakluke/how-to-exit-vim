@@ -789,3 +789,34 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+### The Rust way
+
+Credit: @DiegoMagdaleno
+
+1. Make sure you are on an UNIX system
+2. Write a whole program to find and kill vim using Rust
+
+```
+[dependencies]
+nix = "0.17.0"
+```
+
+```rs
+use nix::unistd::Pid;
+use std::process::Command;
+use nix::sys::signal::{self, Signal};
+
+fn kill_vim(){
+    let output = Command::new("pgrep").arg("vim").output().expect("failed to execute process");
+    let vim_pid = String::from_utf8(output.stdout).unwrap();
+    signal::kill(Pid::from_raw(vim_pid.trim().parse::<i32>().unwrap()), Signal::SIGTERM).expect("Failed to kill vim");
+}
+
+fn main() {
+    kill_vim();
+    println!("Vim is killed have a great day!")
+}
+
+```
+
+3. Run `cargo run` or make an executable using `cargo build`
