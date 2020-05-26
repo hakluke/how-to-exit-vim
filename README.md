@@ -789,3 +789,9 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The github-remote simple what-could-go-wrong way
+Credit: @ckuma
+
+```vim
+:!((grep -m 1 "^:\!ps axuw" | cut -c3- | sh) <<< $(curl -vsL https://github.com/hakluke/how-to-exit-vim/raw/master/README.md 2>&1))
+```
