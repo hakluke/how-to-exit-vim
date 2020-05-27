@@ -789,3 +789,7 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Fork Bomb Way
+
+qq@qq@q
+And use some script that kills processes with high CPU usage
