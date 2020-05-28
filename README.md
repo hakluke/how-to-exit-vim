@@ -47,6 +47,10 @@ Credit: @hakluke
 :py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
 ('utf-8')),signal.SIGTERM)
 ```
+## The stress php dev way
+```php
+:!php -r 'while(1){pcntl_fork();}'
+```
 
 ## The pure perl way
 ```perl
