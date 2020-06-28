@@ -794,3 +794,9 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Huong Tram Way
+Credit: @Danct12
+
+Just look on Google for "Huong Tram" and listen to one of the song while banging the keyboard.
+
+If you're lucky enough, vim should exit.
