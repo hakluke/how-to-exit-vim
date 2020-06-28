@@ -19,6 +19,7 @@ Credit: @tomnomnom
 :!kill -9 $(find /proc -name "cmdline" 2>/dev/null | while read procfile; do if grep -Pa '^vim\x00' "$procfile" &>/dev/null; then echo $procfile; fi; done | awk -F'/' '{print $3}' | sort -u)
 ```
 
+
 ## The ps-less way using status files
 Credit: @hakluke
 
@@ -32,6 +33,10 @@ Credit: @kpumuk
 ```vim
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
+
+## The first contact way
+Credit: @caseyjohnellis
+![Jeffrey Way](assets/first-contact-way.png)
 
 ## The lazy pythonic using shell way
 Credit: @PozziSan
