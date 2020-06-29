@@ -807,7 +807,7 @@ Credit: @DiegoMagdaleno
  nix = "0.17.0"
  ```
 
-  ```rs
+  ```rust
  use nix::unistd::Pid;
  use std::process::Command;
  use nix::sys::signal::{self, Signal};
