@@ -733,6 +733,90 @@ Credit: @cobaltblu27
 
 *Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
+## The Bash Script Way
+Credit: @OskarSchamardin
+
+create a script called exitvi.sh, copy-paste code below, add execute privileges and run.
+
+```bash
+#!/bin/bash
+
+# this script will find all processes named 'vi', 'vim', 'gvim' and 'nvim' and kill them
+# script by Oskar Schamardin <oskarotto.schamardin@tptlive.ee>
+# ironically written with the help of neovim...
+
+# https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+# These colors may depend on the type of terminal you have
+# usage: 'echo -e ${RedColor}foo${NoColor}bar'
+RedColor='\033[0;31m'
+GreenColor='\033[0;32m'
+BrownColor='\033[0;33m'
+BlueColor='\033[0;34m'
+PurpleColor='\033[0;35m'
+CyanColor='\033[0;36m'
+GrayColor='\033[0;37m'
+NoColor='\033[0m'
+
+murder()
+{
+    killall $1
+    echo -e "killed ${CyanColor}$1${NoColor}."
+}
+
+fnHelpText()
+{
+    echo -e "${CyanColor}flags${NoColor} available:"
+    echo -e " "
+    echo -e "${CyanColor}-h, --help${NoColor}                show ${GreenColor}help${NoColor}."
+    echo -e "${CyanColor}<no-flag>${NoColor}                 Kill all processes named ${RedColor}'vi'${NoColor}, ${RedColor}'vim'${NoColor}, ${RedColor}'gvim'${NoColor} and ${RedColor}'nvim'${NoColor}."
+    return 0;
+}
+
+while true $# -gt 0; do
+    case "$1" in
+        -h|--help)
+            echo -e "${GreenColor}exitvi${NoColor} - kill all instances of ${RedColor}vi${NoColor} and it's forks."
+            fnHelpText
+            exit 0
+            ;;
+        '')
+
+            pidof nvim > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "nvim"
+            fi
+
+            pidof vim > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "vim"
+            fi
+
+            pidof vi > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "vi"
+            fi
+
+            pidof gvim > /dev/null
+            if ! [ $? -ne "0" ]
+            then
+                murder "gvim"
+            fi
+
+            echo -e "${RedColor}Vim${GreenColor} is not open. :)${NoColor}"
+            exit 0
+            ;;
+        *)
+            echo -e "${RedColor}[SCRIPT-ERROR]${NoColor} Invalid ${CyanColor}flag${NoColor}."
+            fnHelpText
+            exit 1
+            ;;
+    esac
+done
+```
+
 ## The Go Way
 
 Credit: @youshy
@@ -793,4 +877,3 @@ func main() {
 ```
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
-
