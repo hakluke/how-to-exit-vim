@@ -794,3 +794,10 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+
+## The PowerButton Way
+Credit: @Co2333 
+
+![PowerButton Way](assets/powerbutton.jpeg)
+
+
