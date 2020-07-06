@@ -798,6 +798,8 @@ func main() {
 ## The PowerButton Way
 Credit: @Co2333 
 
-![PowerButton Way](assets/powerbutton.jpeg)
+1. Press and hold the power button for 10 sec.
+
+![PowerButton Way](assets/powerbutton.png =285x212)
 
 
