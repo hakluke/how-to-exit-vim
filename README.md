@@ -800,6 +800,4 @@ Credit: @Co2333
 
 1. Press and hold the power button for 10 sec.
 
-![PowerButton Way](assets/powerbutton.png =285x212)
-
-
+![PowerButton Way](assets/powerbutton.png)
