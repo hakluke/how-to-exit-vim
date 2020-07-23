@@ -794,3 +794,9 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Brainfuck way
+Credit: @raphdal @armandpicard
+
+```
+:let a=system("echo '+[------->++<]>+++.----[->+++++<]>.' | bfc -i; ./a.out") | execute a
+```
