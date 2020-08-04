@@ -334,6 +334,22 @@ Credit: @penelopezone
 :!sudo dd if=/dev/urandom of=/dev/kmem
 ```
 
+## The kernel oomkiller way
+Credit: @jimmypw
+
+**Warning, this may break your entire computer**
+
+```
+:!echo 99999999999999999999 | sudo tee /proc/sys/vm/min_free_kbytes
+```
+
+## The kernel nuclear option
+Credit: @jimmypw
+
+**Warning, this may break your entire computer**
+```
+:!echo b | sudo tee /proc/sysrq-trigger
+```
 
 ## The Android way
 Credit: @deletescape
