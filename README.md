@@ -794,3 +794,8 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The way it says in the documentation
+
+```
+:q!
+```
