@@ -794,3 +794,10 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Supreme Deity/Q Method
+
+1. Destroy present universe running vim
+2. Recreate Universe seconds before you start running vim
+
+Note: Extremely Difficult, consult Q before attempting.
+Note 2: Any changes you make will cease to exist along with the particular instance of vim, even if you manage to save them. 
