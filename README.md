@@ -794,3 +794,14 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+
+## vim native magic
+a la ([@coip](github.com/coip))
+
+### from insert mode:
+- writequit: `ESC` then `SHIFT+zz`
+- quit sans write: `ESC` then `SHIFT+zq`
+
+### from command-mode, sans prompt/vim term:
+- writequit: `SHIFT+zz`
+- quit sans write: `SHIFT+zq`
