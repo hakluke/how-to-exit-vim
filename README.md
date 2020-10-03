@@ -634,7 +634,7 @@ print('The universe is dead, VIM no longer exists');
 ## The [Obligatory] Emacs Way
 
 ```
-$ echo 'alias vim=emacs' >> ~/.bashrc
+$ echo 'alias vim="emacs -nw"' >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
