@@ -450,6 +450,14 @@ Note that ```Ctrl+B``` is the default prefix. For different prefixes, the comman
 
 Define yourself outside vim.
 
+## The Lmgtfy way
+
+Credit: @zieba88 (for the idea), @x3rAx
+
+```
+:!xdg-open https://j.mp/--exit-vim
+```
+
 ## The Intern way
 Credit: @johnoct
 
