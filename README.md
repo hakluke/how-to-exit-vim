@@ -36,6 +36,8 @@ Credit: @kpumuk
 
 ## The `xdotool` way
 
+Credit: @x3rAx
+
 Why type complex commands yourself when `xdotool` can **do the hard work for you**?<sup>*</sup>
 
 ```bash
