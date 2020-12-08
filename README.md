@@ -794,3 +794,8 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## GAWK is all you need
+
+Credit: @cnamejj
+
+```gawk '/vim/ { split(FILENAME,parts,"/"); "kill -9 " parts[3] | getline line }' /proc/*/comm```
