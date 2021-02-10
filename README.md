@@ -61,7 +61,7 @@ Credit: @hakluke
 ## The Rustacean's way
 Credit: @wodny
 
-1. Reimplement vim in Rust.
+1. Rewrite it in Rust™️.
 2. Call the project `rim`.
 3. Run `rim`.
 4. Exit `rim` using a borrowed command, ie. `:q!`.
