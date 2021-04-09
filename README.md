@@ -794,3 +794,9 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Fortran Punchcard Way
+
+Credit: @ShrirajHegde
+
+
+![The Fortran Punchcard Way](assets/fortran-punchcard-way.png)
