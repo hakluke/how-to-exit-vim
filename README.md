@@ -794,3 +794,7 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Power Grid way
+Credit: @RubberDuckShobe
+
+Shut off your city's power grid.
