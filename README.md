@@ -794,3 +794,11 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+
+## The PHP way
+Credit: @punkholic
+
+```php
+:!php -r "exec('killall -9 vim');"
+```
+
