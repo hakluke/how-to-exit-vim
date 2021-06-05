@@ -794,3 +794,10 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Naruto Way
+
+Credit @Rodrous
+
+![Narutoway](assets/Narutoway.png)
+1. Use Talk No Jutsu.
+2. Cry and go to [how-to-exit-vim](https://github.com/hakluke/how-to-exit-vim).
