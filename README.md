@@ -794,3 +794,20 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The Arch Linux Way
+Credit: @suryanisaac
+
+1. Find Friends (hardest step)
+2. Brag about how 'I use Arch btw'
+3. They come home and steal your hardware, by unplugging it first
+4. When plugged back in, vim will be started again
+
+*I use Arch btw*
+
+## The Windows 10 Way
+Credit: @suryanisaac
+
+Please wait for either a crash or a forced update. This will cause you to lose all your work, but will exit vim.
+*This generally takes 5 to 10 minutes. Please be patient*
+
+
