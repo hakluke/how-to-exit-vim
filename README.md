@@ -794,3 +794,6 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The choleric way
+
+Just start to rage and beat the sh*** out of your computer. If you do that long enough, vim will not be open anymore!
