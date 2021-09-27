@@ -794,3 +794,8 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The easy way, that no one knows of...
+[@skandix](https://github.com/skandix)
+
+```shift + z + z ``` - Write current file, if modified, and exit.
+```shift + z + q ``` - Quit current file and exit (same as ":q!").
