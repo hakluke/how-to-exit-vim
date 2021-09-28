@@ -653,6 +653,14 @@ vim
 ```
 5. In the AWS EC2, select the newly created EC2 instance and terminate the instance.
 
+## The Permanent Way
+Credit @jschauma
+
+```
+$ echo q >> ~/.vimrc
+$ vim
+```
+
 ## The Matryoshka Way
 Credit: @ccw630
 
@@ -793,4 +801,3 @@ func main() {
 ```
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
-
