@@ -698,7 +698,7 @@ Credit: @lpmi-13
 
 run vim.yml playbook with the following contents:
 
-```
+```yaml
 ---
 - hosts: vimbox
 
