@@ -544,6 +544,11 @@ how exit vim
 :call libcallnr('libc.so.6', 'exit', 0)
 ```
 
+## The Lazy Way
+```sh
+pkill -9 -i vim
+```
+
 ## The canonical way
 Credit: @ligurio
 
