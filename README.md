@@ -252,6 +252,12 @@ Don't run this, it could break your computer.
 :!echo b | sudo tee -a /proc/sysrq-trigger
 ```
 
+## The layered Method 
+Credit: @mashuptwice
+```
+:!python -c "import os ; os.system(\"ssh localhost kill -9 $(pgrep vim >tmpfile && grep -P '\d+' tmpfile | sed 's/\(.*\)/\1/g' | cat && rm tmpfile) \")"
+```
+
 ## The Abstinence Method
 Credit: @ryanc
 
