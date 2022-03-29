@@ -140,6 +140,13 @@ When you want to spice things up a bit:
 $ timeout $RANDOM vim
 ```
 
+## The Shoot First, Ask Questions Later way
+Credit: @aliva
+ 
+```
+$ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
+
+
 ## The "all against the odds" Russian Roulette way
 Credit: @cfrost
 
