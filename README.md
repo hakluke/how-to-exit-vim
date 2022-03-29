@@ -808,3 +808,10 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+
+## The PowerButton Way
+Credit: @Co2333 
+
+1. Press and hold the power button for 10 sec.
+
+![PowerButton Way](assets/powerbutton.png)
