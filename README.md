@@ -808,3 +808,12 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The zig stage1 way
+
+Credit: @tauoverpi
+
+```zig
+echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vimkill.zig
+```
+
+This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
