@@ -266,6 +266,12 @@ Credit: @mashuptwice
 ```
 Bonus: still stuck if multiple vim instances are running
 
+## The epileptic Method
+Credit: @mashuptwice
+```
+:!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable ammount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
+```
+
 ## The Abstinence Method
 Credit: @ryanc
 
