@@ -46,11 +46,10 @@ python -c "from os import system; system('killall -9 vim')"
 ````
 
 ## The pythonic way
-Credit: @hakluke
+Credit: @Resisty
 
 ```python
-:py3 import os,signal;from subprocess import check_output;os.kill(int(check_output(["pidof","vim"]).decode
-('utf-8')),signal.SIGTERM)
+:py3 import os,signal;from subprocess import check_output;[os.kill(int(i),signal.SIGTERM) for i in check_output(['pgrep', 'vim']).strip().decode('utf-8').split('\n')]
 ```
 
 ## The pure perl way
