@@ -824,3 +824,36 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The cron way
+
+Credit @Lab-Brat
+
+You need to do something in ```vim```, but worried that you won't make it out of there afterwards???  
+No problems, ```crontab``` got your back!
+
+1. Put the ```exitVim.sh``` (script below) in the ```$HOME``` directory
+```bash
+#!/bin/bash
+
+vim_num=$(ps aux | grep vim | wc -l)
+
+if [ $vim_num -gt 1 ]
+then
+        pids=$(ps aux | grep vim | head -n $(($vim_num-1)) | awk '{print $2}')
+        for value in $pids
+        do
+            echo "[# Terminating Process $value #]"
+            sudo kill -9 $value
+        done
+
+else
+        echo "[# Vim is NOT Running #]"
+fi
+```
+2. Create a ```crontab``` to run it every minute
+```bash
+(crontab -l 2>/dev/null; echo "* * * * * /bin/bash /home/boink/exitVim.sh") | crontab -
+```
+**! note !** that ```crontab -e``` may not work because what if your default system editor is ```vi```!?  
+3. Done! Now ```crontab``` will kill every ```vim``` session every minute, you can go there and explore safely.
