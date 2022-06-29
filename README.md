@@ -19,7 +19,6 @@ Credit: @tomnomnom
 :!kill -9 $(find /proc -name "cmdline" 2>/dev/null | while read procfile; do if grep -Pa '^vim\x00' "$procfile" &>/dev/null; then echo $procfile; fi; done | awk -F'/' '{print $3}' | sort -u)
 ```
 
-
 ## The ps-less way using status files
 Credit: @hakluke
 
@@ -142,10 +141,10 @@ $ timeout $RANDOM vim
 
 ## The Shoot First, Ask Questions Later way
 Credit: @aliva
- 
-```
-$ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
 
+```bash
+$ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
+```
 
 ## The "all against the odds" Russian Roulette way
 Credit: @cfrost
@@ -159,7 +158,6 @@ When you want to spice things up a bit more:
 Credit: @eyemyth
 
 Accumulate a sufficient amount of entropy.
-
 
 ## The reboot way
 Credit: @tctovsli
@@ -199,7 +197,6 @@ Touch `quit vim` text in your touch bar
 ## The Mac Terminal way
 
 Press <kbd>⌘</kbd>+<kbd>q</kbd> > Click `Terminate`
-
 
 ## The Passive Way
 
@@ -354,7 +351,6 @@ Credit: @penelopezone
 ```
 :!sudo dd if=/dev/urandom of=/dev/kmem
 ```
-
 
 ## The Android way
 Credit: @deletescape
