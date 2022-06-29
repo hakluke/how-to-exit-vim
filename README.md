@@ -459,7 +459,7 @@ Inside a tmux session:
 ```
 Ctrl+B :kill-session
 ```
-alternativelycd
+alternatively
 
 ```
 Ctrl+B x y
