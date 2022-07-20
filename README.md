@@ -19,6 +19,7 @@ Credit: @tomnomnom
 :!kill -9 $(find /proc -name "cmdline" 2>/dev/null | while read procfile; do if grep -Pa '^vim\x00' "$procfile" &>/dev/null; then echo $procfile; fi; done | awk -F'/' '{print $3}' | sort -u)
 ```
 
+
 ## The ps-less way using status files
 Credit: @hakluke
 
@@ -32,6 +33,10 @@ Credit: @kpumuk
 ```vim
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
+
+## The first contact way
+Credit: @caseyjohnellis
+![Jeffrey Way](assets/first-contact-way.png)
 
 ## The lazy pythonic using shell way
 Credit: @PozziSan
@@ -138,6 +143,13 @@ When you want to spice things up a bit:
 ```bash
 $ timeout $RANDOM vim
 ```
+
+## The Shoot First, Ask Questions Later way
+Credit: @aliva
+ 
+```
+$ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
+
 
 ## The "all against the odds" Russian Roulette way
 Credit: @cfrost
@@ -250,6 +262,20 @@ Don't run this, it could break your computer.
 ```bash
 :!echo b | sudo tee -a /proc/sysrq-trigger
 ```
+
+## The layered Method 
+Credit: @mashuptwice
+```
+:!python -c "import os ; os.system(\"ssh localhost kill -9 $(pgrep vim >tmpfile && grep -P '\d+' tmpfile | sed 's/\(.*\)/\1/g' | cat && rm tmpfile) \")"
+```
+Bonus: still stuck if multiple vim instances are running
+
+## The epileptic Method
+Credit: @mashuptwice
+```
+:!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable ammount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
+```
+May the magnificent colors help you to forget the emotional damage caused by exiting vim!
 
 ## The Abstinence Method
 Credit: @ryanc
@@ -793,3 +819,12 @@ func main() {
 
 3. Run with `go run .` or make executable using `go build -o VimKill`
 
+## The zig stage1 way
+
+Credit: @tauoverpi
+
+```zig
+echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vimkill.zig
+```
+
+This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
