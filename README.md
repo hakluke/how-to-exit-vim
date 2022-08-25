@@ -35,7 +35,7 @@ Credit: @kpumuk
 ```
 
 ## The first contact way
-Credit: @caseyjohnellis
+Credit: @caseyjohnellis</br>
 ![Jeffrey Way](assets/first-contact-way.png)
 
 ## The lazy pythonic using shell way
@@ -145,7 +145,7 @@ Credit: @aliva
  
 ```
 $ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
-
+```
 
 ## The "all against the odds" Russian Roulette way
 Credit: @cfrost
@@ -163,6 +163,7 @@ Accumulate a sufficient amount of entropy.
 
 ## The reboot way
 Credit: @tctovsli
+
 In `vi`:
 ```vim
 :!sudo reboot
