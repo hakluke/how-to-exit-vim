@@ -824,3 +824,11 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The php way
+
+Credit: @rangerz
+
+```php
+:!php -r "posix_kill(posix_getppid(), 9);"
+```
