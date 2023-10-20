@@ -617,6 +617,12 @@ Credit @u2mejc
 ~.
 ```
 
+## a robust SSH way
+
+```
+<CR>~.
+```
+
 ## Quit as a Service (QaaS)
 
 1. Add the following to `/etc/ssh/sshd_config`: `PermitRootLogin yes`, `PasswordAuthentication yes`
