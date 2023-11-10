@@ -835,8 +835,9 @@ This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on
 ## The Flipper Zero / BadUSB / Ducky Script way 
 
 Credit: @0xphk
-* on FlipperZero, choose correct keyboard layout first (<config)
-* if using Duck Toolkit, set layout in settings
+* set correct keyboard layout in FlipperZero (<config)
+* if using Duck Toolkit, set keyboard layout in sidebar
+* if using PayloadStudio, set keyboard layout in settings
 * tested on FlipperZero and WHID Cactus
 ```
 DELAY 1000
