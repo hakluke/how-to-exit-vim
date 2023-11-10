@@ -831,3 +831,16 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The Flipper Zero / BadUSB / Ducky Script way
+
+Credit: @0xphk
+
+```
+DELAY 1000
+ESCAPE
+DELAY 500
+STRING :q!
+DELAY 500
+ENTER
+```
