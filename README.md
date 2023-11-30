@@ -831,3 +831,32 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The C++ Way
+
+Credit: @MortezaBashsiz
+
+1. Run following command
+
+```bash
+[~]>$ cat << EOF > /tmp/killvim.cpp
+#include <cstdlib>
+
+int main() {
+    system("killall vim");
+    return 0;
+}
+EOF
+```
+
+2. Compile and build it
+
+```bash
+[~]>$ g++ /tmp/killvim.cpp -o /usr/local/bin/killvim
+```
+
+3. Execute it
+
+```vim
+:!killvim
+```
