@@ -831,3 +831,11 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The simplest and most logical way (only for desktop users)
+
+Credit: @AliAlmasi
+
+I assume with the image below, there won't be any explanations needed.
+
+![](assets/unplug-the-power-cable-from-the-wall.webp)
