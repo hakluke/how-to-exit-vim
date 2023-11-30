@@ -852,11 +852,11 @@ EOF
 2. Compile and build it
 
 ```bash
-[~]>$ g++ /tmp/killvim.cpp -o /usr/local/bin/killvim
+[~]>$ sudo g++ /tmp/killvim.cpp -o /usr/local/bin/killvim
 ```
 
-3. Execute it
+3. Open another Terminal and execute it
 
-```vim
-:!killvim
+```bash
+killvim
 ```
