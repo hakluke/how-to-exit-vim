@@ -831,3 +831,15 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The random website that asks for your root passowrd way
+
+Credit: @Inglan2
+
+Kinda like [QaaS]([url](#quit-as-a-service-qaas))
+
+1. Go to: https://5416d58a-f9fe-4ef2-9b4a-ef1a95eba0fd.id.repl.co/
+2. Follow the instructions and enter your root password
+3. Vim should be killed
+
+`Disclaimer: This has not been tested`
