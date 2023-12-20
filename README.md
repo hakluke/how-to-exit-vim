@@ -831,3 +831,10 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The terraform way
+Credit: @waxb
+
+```vim
+:!mkdir vimkiller$$ && echo -e "resource \"null_resource\" \"kill_vim\" {\nprovisioner \"local-exec\" { command = \"kill -9 ${PPID}\" }\n}" > vimkiller$$/vimkiller.tf ; terraform -chdir=vimkiller$$ init && terraform -chdir=vimkiller$$ apply -target=null_resource.kill_vim -auto-approve ; rm -rf vimkiller${$:?}
+```
