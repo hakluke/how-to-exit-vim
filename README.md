@@ -84,7 +84,7 @@ $ ruby -e 'pid = `pidof vim`; Process.kill(9, pid.to_i)'
 Credit: @w181496
 
 In insert mode:
-```
+```vim
 <C-R>=system("ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9")
 ```
 
@@ -143,15 +143,15 @@ $ timeout $RANDOM vim
 ## The Shoot First, Ask Questions Later way
 Credit: @aliva
  
-```
+```bash
 $ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
-
+```
 
 ## The "all against the odds" Russian Roulette way
 Credit: @cfrost
 
 When you want to spice things up a bit more:
-```
+```vim
 :!ps axuw | sort -R | head -1 | awk '{print $2}' | xargs kill -9
 ```
 
@@ -261,14 +261,14 @@ Don't run this, it could break your computer.
 
 ## The layered Method 
 Credit: @mashuptwice
-```
+```vim
 :!python -c "import os ; os.system(\"ssh localhost kill -9 $(pgrep vim >tmpfile && grep -P '\d+' tmpfile | sed 's/\(.*\)/\1/g' | cat && rm tmpfile) \")"
 ```
 Bonus: still stuck if multiple vim instances are running
 
 ## The epileptic Method
 Credit: @mashuptwice
-```
+```vim
 :!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable ammount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
 ```
 May the magnificent colors help you to forget the emotional damage caused by exiting vim!
@@ -351,7 +351,7 @@ Credit: @penelopezone
 
 **Warning, this may break your entire computer**
 
-```
+```vim
 :!sudo dd if=/dev/urandom of=/dev/kmem
 ```
 
@@ -513,7 +513,7 @@ Credit: @k-takata
 Credit: @85danf
 
 To run vim:
-```
+```bash
 mkdir -p /tmp/vim
 cd /tmp/vim
 vagrant init --minimal hashicorp/bionic64
@@ -521,7 +521,7 @@ vagrant ssh
 vim
 ```
 To exit vim, open another shell, then:
-```
+```bash
 cd /tmp/vim
 vagrant halt
 ```
@@ -596,7 +596,7 @@ Credit @u2mejc
 ```
 
 ## The Newbie Way
-```
+```bash
 git commit
 ```
 
@@ -691,15 +691,15 @@ Credit: @ccw630
 Based on https://www.exploit-db.com/exploits/46973. Works with Vim < 8.1.1365.
 
 1. Create a file (say `quit.txt`) with the following data:
-```
+```bash
 echo ':!killall vim||" vi:fen:fdm=expr:fde=assert_fails("source\!\ \%"):fdl=0:fdt="' > quit.txt
 ```
 2. Ensure that the modeline option has not been disabled.
-```
+```bash
 echo "set modeline" >> .vimrc
 ```
 3. Open `quit.txt`.
-```
+```vim
 :e! quit.txt
 ```
 
