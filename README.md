@@ -66,6 +66,18 @@ Credit: @wodny
 3. Run `rim`.
 4. Exit `rim` using a borrowed command, ie. `:q!`.
 
+Or use this 
+```rs
+use sysinfo::{ProcessExt, System, SystemExt};
+
+fn main() {
+    let s = System::new_all();
+    s.processes_by_name("vim").for_each(|p| {
+        p.kill();
+    });
+}
+```
+
 ## The lazy rubist using shell way
 Credit: @rynaro
 
