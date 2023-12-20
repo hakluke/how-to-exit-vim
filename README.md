@@ -35,7 +35,7 @@ Credit: @kpumuk
 ```
 
 ## The first contact way
-Credit: @caseyjohnellis
+Credit: @caseyjohnellis</br>
 ![Jeffrey Way](assets/first-contact-way.png)
 
 ## The lazy pythonic using shell way
@@ -163,6 +163,7 @@ Accumulate a sufficient amount of entropy.
 
 ## The reboot way
 Credit: @tctovsli
+
 In `vi`:
 ```vim
 :!sudo reboot
