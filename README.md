@@ -459,13 +459,21 @@ Inside a tmux session:
 ```
 Ctrl+B :kill-session
 ```
-alternativelycd
+alternatively
 
 ```
 Ctrl+B x y
 ```
 
 Note that ```Ctrl+B``` is the default prefix. For different prefixes, the command must be adjusted accordingly.
+
+## The GNU screen way
+
+Inside a `screen` session:
+```
+Ctrl+a k
+```
+… then confirm the prompt `Really kill this window [y/n]` with `y`.
 
 ## The Mathematician's way
 
