@@ -287,6 +287,13 @@ Credit: @donkoch
 $ alias vim=/bin/false
 ```
 
+## The Old Switcheroo
+Credit: @bicb4
+
+```bash
+$ alias vim=nano
+```
+
 ## The shortest way
 Credit: @MasterDevX
 
