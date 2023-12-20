@@ -34,6 +34,13 @@ Credit: @kpumuk
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
 
+## The killer way
+Credit: @hemantapkh
+
+```bash
+pkill -f vim
+```
+
 ## The first contact way
 Credit: @caseyjohnellis
 ![Jeffrey Way](assets/first-contact-way.png)
