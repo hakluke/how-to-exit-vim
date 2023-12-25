@@ -370,6 +370,13 @@ Run vim inside Termux and run this when you want to exit:
 :!su -c killall zygote
 ```
 
+
+## The iOS way
+Credit: @tigerclaw989
+
+Close iSH.
+
+
 ## The JavaScript way
 
 ```js
