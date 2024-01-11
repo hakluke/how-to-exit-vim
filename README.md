@@ -831,3 +831,36 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 ```
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
+
+## The "I'm in a Hurry, Just Tell Me!": ChatGPT Overexplains Way
+
+Credit: @tempookian
+
+**Me:** Hi, in a hurry here. Just need the fastest way to exit Vim, please. No extra info!<br>
+**ChatGPT:** No response...<br>
+**Me:** Refresh...<br>
+**ChatGPT:** Something went wrong. If this issue persists please contact us through our help center at help.openai.com.<br>
+**ChatGPT:** Currently processing a high volume of requests. Regenerating response...<br>
+**Me:** (Several rounds of refreshing and 37 minutes later)...<br>
+**ChatGPT:** (Finally)...<br>
+
+Exiting Vim can be a bit tricky for beginners, but once you understand the modal nature of Vim, it becomes straightforward. Here's a detailed explanation:
+
+1. **Modes in Vim**: Vim operates in several modes, the two most important being Normal mode and Insert mode. When you open Vim, you start in Normal mode. This mode is for navigating and manipulating text, not for inserting text. To exit Vim, you need to be in Normal mode. If you're in Insert mode (where you can type text into the file), you need to switch back to Normal mode first. You can do this by pressing the `Esc` key.
+
+2. **Checking Your Current Mode**: Vim doesn't explicitly tell you which mode you're in, but you can usually tell by the behavior of the editor. If every key you press seems to perform actions or commands rather than typing text, you're in Normal mode.
+
+3. **Saving Changes**: Before you exit Vim, you'll likely want to save any changes you've made. In Normal mode, type `:w` and press `Enter` to save the file. The colon (`:`) enters Command-line mode, where you can enter commands to be executed by Vim.
+
+4. **Exiting Vim**: To exit Vim after saving, type `:wq` (write and quit) or `:x` (a shorthand for saving and exiting if there are changes, and just exiting if there are no changes) in Normal mode and press `Enter`. 
+
+5. **Exiting Without Saving**: If you want to exit without saving any changes, type `:q!` and press `Enter`. The `q` stands for 'quit' and the `!` forces the command without saving changes.
+
+6. **Understanding Error Messages**: If you try to exit Vim with unsaved changes (using just `:q`), Vim will prevent you from doing so and display an error message. This is to prevent accidental loss of unsaved work. You can either save the changes first (`:w`) or use `:q!` to exit without saving.
+
+7. **Combining Commands**: If you have unsaved changes and want to save them and exit in one command, use `:wq` or `:x`. If Vim is preventing you from exiting because of unsaved changes, and you don't care to save those changes, use `:q!`.
+
+Remember, Vim is a modal editor, which means understanding its modes is key to using it effectively. Always ensure you're in the correct mode for the action you want to perform.
+
+**Me:** Thanks! 😐
+ 
