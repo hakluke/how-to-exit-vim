@@ -370,6 +370,13 @@ Run vim inside Termux and run this when you want to exit:
 :!su -c killall zygote
 ```
 
+## The 'I use Arch btw' way
+Credit: @lukaszlach
+
+```bash
+docker run --rm --pid host archlinux pkill vim
+```
+
 ## The JavaScript way
 
 ```js
