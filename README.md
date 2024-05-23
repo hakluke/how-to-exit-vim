@@ -864,6 +864,34 @@ Based on the C way of @dbalatero
 3. Make some tea and wait.
 4. According to [infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem) they will exit vim eventually.
 
+## The DevOps way
+
+Credit: @frank-bee
+```
+provider "local" {
+  version = "~> 2.0"
+}
+
+resource "local_file" "exit_vim_script" {
+  content = <<-EOF
+    #!/bin/bash
+    ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
+  EOF
+  filename = "${path.module}/exit_vim.sh"
+  file_permission = "0755"
+}
+
+resource "null_resource" "run_exit_vim_script" {
+  provisioner "local-exec" {
+    command = "${path.module}/exit_vim.sh"
+  }
+
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+}
+```
+
 ---
 
 Built by [hakluke](https://hakluke.com) (Luke Stephens), founder and CEO of [Haksec](https://haksec.io), a group of cybersecurity companies:
