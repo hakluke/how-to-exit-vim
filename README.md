@@ -847,3 +847,32 @@ STRING :q!
 DELAY 500
 ENTER
 ```
+
+## The DevOps way
+
+Credit: @frank-bee
+```
+provider "local" {
+  version = "~> 2.0"
+}
+
+resource "local_file" "exit_vim_script" {
+  content = <<-EOF
+    #!/bin/bash
+    ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
+  EOF
+  filename = "${path.module}/exit_vim.sh"
+  file_permission = "0755"
+}
+
+resource "null_resource" "run_exit_vim_script" {
+  provisioner "local-exec" {
+    command = "${path.module}/exit_vim.sh"
+  }
+
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+}
+```
+
