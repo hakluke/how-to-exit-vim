@@ -851,28 +851,62 @@ ENTER
 ## The DevOps way
 
 Credit: @frank-bee
-```
-provider "local" {
-  version = "~> 2.0"
+
+
+```yaml
+provider "aws" {
+  region = "us-gov-west-1" # AWS GovCloud (US) region
 }
 
-resource "local_file" "exit_vim_script" {
-  content = <<-EOF
-    #!/bin/bash
-    ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9
-  EOF
-  filename = "${path.module}/exit_vim.sh"
-  file_permission = "0755"
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"] # Canonical's AWS account ID
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
 }
 
-resource "null_resource" "run_exit_vim_script" {
+resource "aws_instance" "example" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+  tags = {
+    Name = "VimChecker"
+  }
+
   provisioner "local-exec" {
-    command = "${path.module}/exit_vim.sh"
-  }
+    command = <<-EOF
+      #!/bin/bash
+      # Start Vim in the background
+      vim &
 
-  triggers = {
-    always_run = "${timestamp()}"
+      # Check if Vim is running
+      if ps aux | grep '[v]im'; then
+        echo "vim_running" > vim_status.txt
+      else
+        echo "vim_not_running" > vim_status.txt
+      fi
+    EOF
   }
 }
+
+output "vim_status" {
+  value = file("${path.module}/vim_status.txt")
+}
 ```
+
+```bash
+#!/bin/bash
+terraform init
+terraform apply -auto-approve
+VIM_STATUS=$(terraform output -raw vim_status)
+if [ "$VIM_STATUS" == "vim_running" ]; then
+  echo "Vim is running. Triggering Terraform destroy."
+  terraform destroy -auto-approve
+else
+  echo "No Vim process found. Instance will not be terminated."
+fi
+```
+
 
