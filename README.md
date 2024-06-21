@@ -2,7 +2,12 @@
 Below are some simple methods for exiting vim.
 
 For real vim (and hacking) tips, follow [hakluke](https://twitter.com/hakluke) and [tomnomnom](https://twitter.com/tomnomnom) on twitter.
+## The simplest way
+Credit: @akshit-chilkoti
 
+```vim
+:wq
+```
 ## The simple way
 Credit: @tomnomnom
 
