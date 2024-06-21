@@ -34,6 +34,20 @@ Credit: @kpumuk
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
 
+## The `xdotool` way
+
+Credit: @x3rAx
+
+Why type complex commands yourself when `xdotool` can **do the hard work for you**?<sup>*</sup>
+
+```bash
+:!(xdotool type ":e /tmp/exit.vim"; xdotool key KP_Enter; xdotool type "ggiquitall\!"; xdotool key KP_Enter; xdotool key Escape; xdotool type ":w"; xdotool key KP_Enter; xdotool type ":source /tmp/exit.vim"; xdotool key KP_Enter)&
+```
+
+**¯\\\_(ツ)\_/¯**
+
+<sup>*</sup> Needs `xdotool` to be installed
+
 ## The first contact way
 Credit: @caseyjohnellis
 ![Jeffrey Way](assets/first-contact-way.png)
