@@ -55,7 +55,7 @@ Credit: @hakluke
 
 ## The pure perl way
 ```perl
-:!perl -e 'while(</proc/*>){open($f, "$_/cmdline"); kill 9, substr($_,6) if <$f> =~ m|^vim\x00| }'  
+:!perl -e 'while(</proc/*>){open($f, "$_/cmdline"); kill 9, substr($_,6) if <$f> =~ m|^vim\x00| }'
 ```
 
 ## The Rustacean's way
@@ -142,7 +142,7 @@ $ timeout $RANDOM vim
 
 ## The Shoot First, Ask Questions Later way
 Credit: @aliva
- 
+
 ```bash
 $ ps axuw | awk '{print $2}' | grep -v PID | shuf -n 1 | sudo kill -9
 ```
@@ -259,7 +259,7 @@ Don't run this, it could break your computer.
 :!echo b | sudo tee -a /proc/sysrq-trigger
 ```
 
-## The layered Method 
+## The layered Method
 Credit: @mashuptwice
 ```vim
 :!python -c "import os ; os.system(\"ssh localhost kill -9 $(pgrep vim >tmpfile && grep -P '\d+' tmpfile | sed 's/\(.*\)/\1/g' | cat && rm tmpfile) \")"
@@ -441,7 +441,7 @@ Credit: @mqchen
 9. Review burn down chart together with the team.
 10. Schedule retrospective.
 
-## The spiritual way 
+## The spiritual way
   Credit: @Janice-M
 1. Take a cleansing bath
 2. Weditate
@@ -633,7 +633,7 @@ from secrets import randbits
 
 def heat_death():
     return False
-    
+
 def increase_entropy():
     return randbits(64)
 
@@ -744,7 +744,7 @@ run vim.yml playbook with the following contents:
 
   - name: Start Vim in the background.
     shell: "(vim >/dev/null 2>&1 &)"
-  
+
   - name: Quit Vim.
     shell: "(pkill vim)"
 ```
@@ -832,7 +832,7 @@ echo "pub fn main() !noreturn { unreachable; }" > vimkill.zig; zig build-exe vim
 
 This eventually [exhausts memory](https://github.com/ziglang/zig/issues/3461) on the machine which gives the OOM killer a chance to kill vim.
 
-## The Flipper Zero / BadUSB / Ducky Script way 
+## The Flipper Zero / BadUSB / Ducky Script way
 
 Credit: @0xphk
 * set correct keyboard layout in FlipperZero (<config)
@@ -863,3 +863,69 @@ Based on the C way of @dbalatero
 2. Have an infinite number of monkeys type on a keyboard for an infinite amount of type.
 3. Make some tea and wait.
 4. According to [infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem) they will exit vim eventually.
+
+## The LLM way
+
+Credit: @yurnov
+
+Prerequisite:
+- Linux OS (Ubuntu, Fedora, Arch, etc.) with min. 16 GB RAM for smaller models, a discrete GPU (Nvidia GTX/RTX or AMD) with at least 4GB VRAM is recommended but not strictly required, thanks to quantization support.
+- Docker
+
+Choose LLM model:
+
+| Model      | Parameters | License    | Context Length | Key Features                                                                         |
+| ---------- | ---------- | ---------- | -------------- | ------------------------------------------------------------------------------------ |
+| qwen3:0.6b | 0.6B       | Apache-2.0 | 32K tokens     | Dual thinking/non-thinking modes, multilingual, efficient for low-resource devices   |
+| qwen3:8b   | 8.2B       | Apache-2.0 | 128K tokens    | Advanced reasoning, agent capabilities, multilingual, strong coding/math performance |
+| mistral:7b | 7.3B       | Apache-2.0 | 32K tokens     | Fast inference, strong coding, efficient attention, good for general tasks           |
+
+Pull Ollama Docker Image
+```
+docker pull ollama/ollama​
+```
+
+Run Ollama in a container, mapping the default chat/API port and adding persistent storage for model downloads:
+
+```
+mkdir -p ollama && \
+docker run -d \
+	--name ollama \
+	-p 11434:11434 \
+	-v ollama:/root/.ollama \
+	ollama/ollama
+```
+
+For GPU acceleration (recommended if you have an NVIDIA GPU and want improved performance):
+```
+mkdir -p ollama && \
+docker run -d \
+	--gpus all \
+	--name ollama \
+	-p 11434:11434 \
+	-v ollama:/root/.ollama \
+	ollama/ollama
+```
+
+Enter the running container's shell:
+```
+docker exec -it ollama /bin/bash
+```
+
+Download and Run Your Model (e.g., Mistral or Qwen3)
+
+For Mistral:
+```
+ollama pull mistral:7b
+ollama run mistral:7b
+```
+
+For Qwen3:
+```
+ollama pull qwen3:8b
+ollama run qwen3:8b
+```
+
+Note: you may choose another model
+
+Provide a prompt with the question how to exit vim
