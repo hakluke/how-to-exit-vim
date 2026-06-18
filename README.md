@@ -269,7 +269,7 @@ Bonus: still stuck if multiple vim instances are running
 ## The epileptic Method
 Credit: @mashuptwice
 ```vim
-:!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable ammount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
+:!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable amount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
 ```
 May the magnificent colors help you to forget the emotional damage caused by exiting vim!
 
@@ -459,7 +459,7 @@ Inside a tmux session:
 ```
 Ctrl+B :kill-session
 ```
-alternativelycd
+alternatively, you can use
 
 ```
 Ctrl+B x y
@@ -860,6 +860,6 @@ Based on the C way of @dbalatero
 
 ## The infinite monkey way
 1. Get an infinite number of monkeys.
-2. Have an infinite number of monkeys type on a keyboard for an infinite amount of type.
+2. Have an infinite number of monkeys type on a keyboard for an infinite amount of time.
 3. Make some tea and wait.
 4. According to [infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem) they will exit vim eventually.
