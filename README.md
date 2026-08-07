@@ -752,7 +752,7 @@ run vim.yml playbook with the following contents:
 ## The Stack Overflow Way
 Credit: @cobaltblu27
 
-*Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
+*Yeah exiting vim is really frustrating sometimes. You should definitely try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
 ## The Go Way
 
