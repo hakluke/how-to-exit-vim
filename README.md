@@ -637,7 +637,7 @@ def heat_death():
 def increase_entropy():
     return randbits(64)
 
-while heat_death()==False:
+while not heat_death():
     increase_entropy();
 
 print('The universe is dead, VIM no longer exists');
