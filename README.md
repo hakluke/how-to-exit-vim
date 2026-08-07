@@ -509,6 +509,11 @@ Credit: @k-takata
 
 ```
 
+### Linux
+```vim
+:call libcallnr('libc.so.6', 'exit', 0)
+```
+
 ## The Vagrant way
 Credit: @85danf
 
@@ -558,11 +563,6 @@ vim exit help
 vim exit guide
 exit him
 how exit vim
-```
-
-## Linux
-```vim
-:call libcallnr('libc.so.6', 'exit', 0)
 ```
 
 ## The canonical way
