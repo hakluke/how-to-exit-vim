@@ -33,6 +33,11 @@ Credit: @kpumuk
 ```vim
 :!grep -P "PPid:\t(\d+)" /proc/$$/status | cut -f2 | xargs kill -9
 ```
+## The SUS-pend way
+Credit: @noobibek
+```bash
+Ctrl+Z
+```
 
 ## The first contact way
 Credit: @caseyjohnellis
