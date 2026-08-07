@@ -396,7 +396,7 @@ kubectl run --generator=run-pod/v1 my-vim  --image=thinca/vim
 then you would normally exit Vim by deleting the associated Kubernetes pod:
 
 ```bash
-kubectl delete po my-vim
+kubectl delete pod my-vim
 ```
 
 ## The Vim inside of Vim inside of Vim inside of Vim... inside of Vim way
