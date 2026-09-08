@@ -269,7 +269,7 @@ Bonus: still stuck if multiple vim instances are running
 ## The epileptic Method
 Credit: @mashuptwice
 ```vim
-:!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable ammount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
+:!timeout 10 yes "Preparing to exit vim. It might seem that this takes an unreasonable amount of time and processing power, but instead of complaining you could just enjoy the show\!" | lolcat ; pgrep vim | xargs kill -9
 ```
 May the magnificent colors help you to forget the emotional damage caused by exiting vim!
 
@@ -752,7 +752,7 @@ run vim.yml playbook with the following contents:
 ## The Stack Overflow Way
 Credit: @cobaltblu27
 
-*Yeah exiting vim is really frustrating sometimes. You should definately try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
+*Yeah exiting vim is really frustrating sometimes. You should definitely try using Neovim. It's fast, has terminal emulator, and also supports plugin that will help you exit vim.*
 
 ## The Go Way
 
