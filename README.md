@@ -864,6 +864,67 @@ Based on the C way of @dbalatero
 3. Make some tea and wait.
 4. According to [infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem) they will exit vim eventually.
 
+## The DevOps way
+
+Credit: @frank-bee
+
+
+```yaml
+provider "aws" {
+  region = "us-gov-west-1" # AWS GovCloud (US) region
+}
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"] # Canonical's AWS account ID
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+}
+
+resource "aws_instance" "example" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+  tags = {
+    Name = "VimChecker"
+  }
+
+  provisioner "local-exec" {
+    command = <<-EOF
+      #!/bin/bash
+      # Start Vim in the background
+      vim &
+
+      # Check if Vim is running
+      if ps aux | grep '[v]im'; then
+        echo "vim_running" > vim_status.txt
+      else
+        echo "vim_not_running" > vim_status.txt
+      fi
+    EOF
+  }
+}
+
+output "vim_status" {
+  value = file("${path.module}/vim_status.txt")
+}
+```
+
+```bash
+#!/bin/bash
+terraform init
+terraform apply -auto-approve
+VIM_STATUS=$(terraform output -raw vim_status)
+if [ "$VIM_STATUS" == "vim_running" ]; then
+  echo "Vim is running. Triggering Terraform destroy."
+  terraform destroy -auto-approve
+else
+  echo "No Vim process found. Instance will not be terminated."
+fi
+```
+
 ---
 
 Built by [hakluke](https://hakluke.com) (Luke Stephens), founder and CEO of [Haksec](https://haksec.io), a group of cybersecurity companies:
